@@ -4,7 +4,9 @@ A state-graph adventure adaptation of *The Sorrows of Young Werther* (Boylan tra
 `werther.txt`). One path through the game is the novel; the dramatic question is whether the
 player can leave it.
 
-Status: **awaiting approval** before Stage 2 (passage writing + single-file HTML build).
+Status: **approved and built** — the game lives in `index.html` (single self-contained file,
+deployable via GitHub Pages). All design checks below are enforced mechanically by a test
+harness that drives the actual game graph.
 
 ---
 
