@@ -67,21 +67,18 @@
   .preface { text-align: left; margin-top: 1.6rem; }
   .fin {
     margin-top: 2.4rem; padding-top: 1.4rem; border-top: 1px solid rgba(110,80,40,.4);
-    font-size: .98rem;
   }
   .fin .finname {
     font-family: 'IM Fell English SC', 'IM Fell English', serif;
     text-align: center; letter-spacing: .16em; font-size: 1.15rem; margin-bottom: 1rem;
   }
   .fin p { text-indent: 0; }
-  .fin .verdict { font-style: italic; text-align: center; margin: 1rem 0; }
-  .fin ul { margin: .4rem 0 1rem 1.2rem; padding: 0; }
-  .fin li { margin-bottom: .3rem; font-size: .93rem; }
+  .fin .verdict { font-style: italic; text-align: center; margin: 1.4rem auto; max-width: 30rem; line-height: 1.6; }
   footer { text-align: center; margin-top: 2.2rem; font-size: 1rem; }
   footer a { color: #4a3520; font-style: italic; text-decoration: none; }
   footer a:hover { text-decoration: underline; }
-  .footnote { font-size: .88rem; margin-top: 1.6rem; padding-top: .8rem; border-top: 1px dotted rgba(110,80,40,.5); }
-  .footnote p { text-indent: 0; }
+  .coda { font-style: italic; margin-top: .4rem; }
+  .coda p { text-indent: 0; }
 </style>
 </head>
 <body>
@@ -138,7 +135,7 @@ function render(n){
   for (const pt of n.parts){
     if (!partVisible(pt)) continue;
     if (pt.head) h += '<div class="datehead">' + esc(pt.head) + "</div>";
-    if (pt.foot) h += '<div class="footnote">' + paras(pt.text) + "</div>";
+    if (pt.foot) h += '<div class="fleuron">&#10087;</div><div class="coda">' + paras(pt.text) + "</div>";
     else h += paras(pt.text);
   }
   h += "</div>";
@@ -158,19 +155,16 @@ function render(n){
 function verdict(n){
   switch(n.endingId){
     case "E1": return S.divs.length
-      ? "You died on Goethe&rsquo;s schedule, though not for want of trying."
-      : "You died on Goethe&rsquo;s schedule.";
-    case "E2": {
-      const first = S.divs.length ? S.divs[0].split(" — ")[0] : "the 16th of June 1771";
-      return "You escaped the novel on " + esc(first) + ".";
-    }
-    case "E3": return "You left the story; the story did not notice.";
-    case "E4": return "Goethe&rsquo;s December took a life; you gave one back.";
-    case "E5": return "You remained within her orbit, and outside the book.";
-    case "E6": return "You left Goethe&rsquo;s path and found the other death waiting.";
-    case "E7": return "You went under the story, and it lost the sound of you.";
-    case "E8": return "You escaped by the breadth of a continent; the archive ends at the frontier.";
-    case "E9": return "You escaped into borrowed words, and no one could tell your voice from the play&rsquo;s.";
+      ? "You pulled against the book, and the book was stronger. Whatever you tried along the way, the days closed over it; and Werther died on Goethe&rsquo;s schedule after all."
+      : "This is the ending Goethe wrote. Every letter fell in its place, every day kept its appointment, and Werther died on the author&rsquo;s schedule. You did not steer him &mdash; you read him.";
+    case "E2": return "This is not the ending Goethe wrote. In the novel there is no wedding, and June is only another month on the road to December. You steered him out of the book into a garden; and happiness, unlike sorrow, keeps no journal.";
+    case "E3": return "Goethe gave Werther a death; you gave him a desk. He outlives the novel, in fair copy; and the story never noticed its hero leave the room.";
+    case "E4": return "In the book, that December takes two lives and spares none. You turned Werther&rsquo;s one unwasted friendship into a pardon: the prisoner lives, and Werther rides out of the valley &mdash; alive, and pointed forward.";
+    case "E5": return "The novel holds that a man cannot stand so near the flame and live. You made him stand there and live &mdash; stooping a little, and warm. It is not Goethe&rsquo;s ending; it is a household&rsquo;s.";
+    case "E6": return "You turned him from Goethe&rsquo;s road, and December found another way to the same river. Not the author&rsquo;s death, but a death; the book&rsquo;s gravity is patient.";
+    case "E7": return "You took Werther out of the novel by the mine-shaft. The book cannot follow a man underground; its last sounding finds only the great plan of the mountain, initialed W.";
+    case "E8": return "You steered him past the fate in the book by the breadth of a continent. The archive gives out at the frontier; whatever became of him there, it is no longer a chapter.";
+    case "E9": return "You lent Goethe&rsquo;s ending to the theatre and kept the man. He speaks all the passions nightly, softly, a beat before they happen &mdash; and outlives every one of them.";
   }
   return "";
 }
@@ -179,14 +173,6 @@ function finis(n){
   let h = '<div class="fin">';
   h += '<div class="finname">FINIS &middot; ' + esc(n.ending) + "</div>";
   h += '<p class="verdict">' + verdict(n) + "</p>";
-  h += "<p>You kept to Goethe&rsquo;s page through " + S.canon + " of its one-and-thirty stations.</p>";
-  if (S.divs.length){
-    h += "<p>Where you left the path:</p><ul>";
-    for (const d of S.divs) h += "<li>" + esc(d) + "</li>";
-    h += "</ul>";
-  } else {
-    h += "<p>You never left the path.</p>";
-  }
   h += '<div class="choices"><button onclick="restart()">&mdash;&nbsp;begin again&nbsp;&mdash;</button></div></div>';
   return h;
 }

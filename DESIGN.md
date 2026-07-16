@@ -341,3 +341,16 @@ consequence, gate failures (already acknowledged), the endgame's bare option, an
 hollow fading pairs deep in the escape corridors. The harness now verifies the wiring both
 ways: every choice mark has a matching part in its target, every mark part has a producer.
 Also fixes three latent header bugs (WAL, ST3, ST5 showed no date line on some paths).
+
+---
+
+## Revision 4: the finis de-scored
+
+The station-count and divergence list are gone from the ending screen — the game has no
+score. Under FINIS each of the nine endings now carries a single elegant epilogue on the one
+question that matters: did you steer Werther to the fate in the novel, or somewhere else
+("Goethe gave Werther a death; you gave him a desk…"). E1 keeps two variants: the pure
+reading, and the run that pulled against the book and lost. Fidelity tracking survives in
+the engine (the harness still verifies canon replication); it is simply no longer shown.
+The editor codas in THE ANSWER and THE PARTICLE are promoted from small-print footnotes to
+full-size italic closing paragraphs set off by a fleuron.
