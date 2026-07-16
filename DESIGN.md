@@ -39,6 +39,27 @@ layer was rewritten to an inverted narrative stance:
 
 ---
 
+## Addendum: escape corridors
+
+Three corridors leave the novel's geography entirely; none rejoins the spine; each ends in
+its own FINIS (ending count now 9). Documentation thins with distance from the book:
+précis → fragments → pay-books, bills of lading, playbills → the editor's open conjecture,
+with lacunae rendered as "· · ·". Fidelity accounting simply reads low, as it should.
+
+| corridor | entry (surface-ordinary choice) | gate / rarity | run | ending & verdict |
+|---|---|---|---|---|
+| **THE GALLERY** | third option at M1: the Mine-Master's winter contract | two coordinated non-canon choices (N18 mines → M1 stay) | G1–G5, Sept 1772 → 1775: survey work; Christmas below; the March flood known only from the pay-book ("seven came up alive"); a one-line 1774 scrap | E7 — "You went under the story, and it lost the sound of you." |
+| **THE NORTH** | fourth option at N18: "ask the world for employment — anything, so it be far" | **gated on PATRON**; without it the letter goes unanswered and the spine resumes (tinted) | P1–P5, Jul 1772 → 1775: the Count's Petersburg commission; Riga and the sea; skating the frozen Neva on 21 December; white nights; a doubtful chalk portrait, "a lady with a bird upon her finger" | E8 — "You escaped by the breadth of a continent; the archive ends at the frontier." |
+| **THE PLAYERS** | third option at ST4: ride a stage or two with a troupe | deep in the stay-branch (stay + flee already diverged) | T1–T4, Jun 1772 → 1774: scene-painting; prompting *Emilia Galotti* on 22 Dec 1772; a 1773 playbill — *The Friend of the House*, "Herr Wärther," misspelt | E9 — "You escaped into borrowed words, and no one could tell your voice from the play's." |
+
+Corridor mems (never gating): TOOLCHEST (the Homer in the survey-chest, ribbon present only
+if it was never locked in the Wahlheim drawer), LASTLETTER (the unsent Wahlheim letter the
+editor declines to open), BADSEA ("the sea — failed"), LINDENS (two trees in every painted
+forest), ASKEDLOVER. One engine touch: part-conditions may now require multiple mems
+(`mem: [..]`), needed for the ribbon/drawer interaction in E7.
+
+---
+
 ## 0. Frame
 
 - The game opens with Goethe's Preface in the editor's voice ("I have carefully collected

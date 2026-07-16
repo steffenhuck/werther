@@ -102,7 +102,7 @@ function partVisible(pt){
   if (pt.flag && !has(pt.flag)) return false;
   if (pt.not && has(pt.not)) return false;
   if (pt.mark && !S.marks[pt.mark]) return false;
-  if (pt.mem && !S.mem[pt.mem]) return false;
+  if (pt.mem){ const ms = Array.isArray(pt.mem) ? pt.mem : [pt.mem]; if (ms.some(m => !S.mem[m])) return false; }
   if (pt.notMem && S.mem[pt.notMem]) return false;
   return true;
 }
@@ -168,6 +168,9 @@ function verdict(n){
     case "E4": return "Goethe&rsquo;s December took a life; you gave one back.";
     case "E5": return "You remained within her orbit, and outside the book.";
     case "E6": return "You left Goethe&rsquo;s path and found the other death waiting.";
+    case "E7": return "You went under the story, and it lost the sound of you.";
+    case "E8": return "You escaped by the breadth of a continent; the archive ends at the frontier.";
+    case "E9": return "You escaped into borrowed words, and no one could tell your voice from the play&rsquo;s.";
   }
   return "";
 }
@@ -429,11 +432,16 @@ By morning it was all over town. And Fräulein B—, met in the walk, wept: she 
     to: "N19", set: ["PATRON"], mark: "candor",
     log: "June 1772 — you opened your heart to the Prince, and he became your friend." },
   { label: "Neither camp nor court: go down into the earth instead. The mines in —— want seeing.",
-    to: "M1", log: "June 1772 — you went down into the mines instead of back." }
+    to: "M1", log: "June 1772 — you went down into the mines instead of back." },
+  { label: "Ask the world for employment — a legation, a survey, a library; anything, so it be far.",
+    gate: { flag: "PATRON", pass: "P1", fail: "N19", failMark: "coldpost",
+      passLog: "June 1772 — you asked a friend for distance, and he gave you the north.",
+      failLog: "June 1772 — you wrote to the great world for employment; no answer found you on the roads." } }
 ]},
 
 "N19": { date: "July 1772", ord: 17720716, canon: true, parts: [
   { mark: "candor", text: `The Prince heard him to the end, and at parting held both his hands: "You are wounded, not worthless. When the winter of the thing arrives, come to me. I mean it as a standing order."` },
+  { mark: "coldpost", text: `The letters he had written for employment went unanswered. The wide world keeps no seat for a man who only wants distance.` },
   { head: "JULY 1772.", text: `"Once more I am a wanderer, a pilgrim, through the world. But what else are you!" By late July he had ceased pretending the mines were his object.` }
 ], choices: [
   { label: "To Wahlheim, then: smile at the heart, and obey it.", to: "N20", canon: true },
@@ -713,7 +721,9 @@ The change he set down plainly, as a chronicler: she had ceased to give him her 
 From an inn on the —— road: "All my roads have one fault in common: each of them, given time enough, can be made to bend toward a certain valley. I ride away from it by long detours. That is my whole geography now — away from; and the flaw in the method you will have found out long before I confess it."` }
 ], choices: [
   { label: "Ride farther from the valley, by longer detours.", to: "N19" },
-  { label: "Admit the method: all the detours bend home.", to: "N19" }
+  { label: "Admit the method: all the detours bend home.", to: "N19" },
+  { label: "The players at the inn want a man who can read verse aloud and paint a forest by Friday. Ride with them a stage or two.",
+    to: "T1", log: "May 1772 — you rode off with a troupe of players, and the book lost sight of you." }
 ]},
 
 "ST5": { date: "spring–summer 1772 — the permitted days", ord: 17720710, canon: false, parts: [
@@ -818,7 +828,9 @@ The undersigned permits himself, with the season, the expression of his most dut
 On the third evening, on the grass with the green after-image of sunset swimming on the dark, he caught himself measuring — "on the packthread of the heart, which never lies and never learns" — the distance from the gallery's end to a certain valley. The thread ran straight through the mountain.` }
 ], choices: [
   { label: "Up, and homeward by the straight road.", to: "N21", canon: true },
-  { label: "Send Wilhelm the wheel-house drawing first: proof the hand still serves.", to: "N21" }
+  { label: "Send Wilhelm the wheel-house drawing first: proof the hand still serves.", to: "N21" },
+  { label: "The Master offers the leather for the winter: the new galleries want taking up on paper.",
+    to: "G1", log: "September 1772 — you signed for the winter below, and the book lost the light of you." }
 ]},
 
 /* ==================== BRANCH — THE RIDE ==================== */
@@ -884,6 +896,140 @@ The body was given back by the water three days after, below the weir at M—. T
 Charlotte was long ill. Albert has never spoken of the matter. The grave is by the churchyard wall at Wahlheim, under two lindens, and bears no name; the peasants, who loved him, keep it swept notwithstanding.
 
 And thou, good soul, that feelest the same stress as he — let this little book be thy friend at the fireside; and take it no farther.` }
+], choices: []},
+
+/* ============== ESCAPE CORRIDOR — THE GALLERY (mines) ============== */
+
+"G1": { date: "September 1772 — the contract", ord: 17720920, canon: false, parts: [
+  { head: "SEPTEMBER 1772.", text: `The Master of the mines, having seen the wheel-house drawings, offered what no one had thought to offer him: work. A winter's contract — the new galleries to be taken up on paper; chains and compass below, pen above; lodging with the bell-founder's household; the leather and the lamp his own. He did not go up to Wahlheim.
+
+To Wilhelm, three lines: "I have hired out my one talent to the dark. Do not tell my mother it is the happiest sentence I have written this year."` }
+], choices: [
+  { label: "Sign for the winter.", to: "G2" },
+  { label: "Sign for the winter — but keep a horse, in case.", to: "G2" }
+]},
+
+"G2": { date: "November 1772", ord: 17721101, canon: false, parts: [
+  { head: "NOVEMBER 1772.", text: `From the winter we have working papers and two letters. The letters are calm — calmer than any since the spring of 1771. "There is no weather below, Wilhelm; I have told you it is an absence. I begin to think a man can furnish an absence. One measures; the chain does not exaggerate; at evening the line on the paper is exactly as long as the day was. Find me another trade of which that is true."` }
+], choices: [
+  { label: "Measure; draw; sleep.", to: "G3" },
+  { label: "Keep the little Homer in the tool-chest, under the chalks.", to: "G3", mem: "TOOLCHEST" }
+]},
+
+"G3": { date: "24 December 1772", ord: 17721224, canon: false, parts: [
+  { head: "DECEMBER 24, 1772.", text: `Of that Christmas one line is preserved: "They sang below at midnight, the whole shift, and set candles in the gallery wall; and I thought of no one, Wilhelm — which, thou wilt understand, is a manner of thinking of one person only."` }
+], choices: [
+  { label: "Set your own candle in the wall.", to: "G4" },
+  { label: "Go up, and stand an hour under the stars.", to: "G4" }
+]},
+
+"G4": { date: "March 1773 — the water", ord: 17730315, canon: false, parts: [
+  { head: "MARCH 1773.", text: `Here the letters fail, and we are on the pay-book's ground. In March the spring water broke into the second gallery. The book shows double wages that quarter; an entry for seven men's lamps, re-issued; and a silver kanne, inscribed to "the surveyor W., by whose plan of the old workings seven came up alive." Of his own account of that week we have nothing.` },
+  { head: "· · ·", text: `` }
+], choices: [
+  { label: "Say nothing of it to Wilhelm.", to: "G5" },
+  { label: "Send Wilhelm the newspaper paragraph, without comment.", to: "G5" }
+]},
+
+"G5": { date: "1774", ord: 17740601, canon: false, parts: [
+  { head: "1774.", text: `Of the year 1774 the archive holds a bill for Dutch paper, and one line in the Master's hand: "W. below, at the great plan."` }
+], choices: [
+  { label: "Below, at the great plan.", to: "E7" },
+  { label: "Below.", to: "E7" }
+]},
+
+"E7": { date: "1775", ord: 17750101, canon: false, editorhead: true,
+  ending: "THE GALLERY", endingId: "E7", parts: [
+  { text: `In 1775 the mountain was published: the whole mountain, every level and winding of a hundred and forty years of workings, engraved on copper at Leipzig, four sheets, initialed at the corner W. Those who know the plan say a man might find his way by it, in the perfect dark, from any gallery to any other; and that no such map had been made of any mountain before.` },
+  { mem: "TOOLCHEST", notMem: "DRAWER", text: `An inventory of the survey-chest, taken years later, lists chalks, chains, a lamp of the old pattern — and a Homer in duodecimo, much worn, with a pink ribbon folded flat at the middle of the Odyssey.` },
+  { mem: ["TOOLCHEST","DRAWER"], text: `An inventory of the survey-chest, taken years later, lists chalks, chains, a lamp of the old pattern — and a Homer in duodecimo, much worn. The ribbon it once travelled with had been left, turned under a key, in another country.` },
+  { text: `Whether he is below it still, the archive does not say. The letters to Wilhelm had ceased by then — or have not reached us; we are no longer in a position to distinguish.` }
+], choices: []},
+
+/* ============== ESCAPE CORRIDOR — THE NORTH (Petersburg) ============== */
+
+"P1": { date: "July 1772 — the commission", ord: 17720720, canon: false, parts: [
+  { head: "JULY 1772.", text: `The answer came by return of post, and was characteristic: no condolence, one commission. A legation was going to Petersburg in the autumn; a man was wanted who could keep papers in order and take views of what he saw; the salary was named, the road was named. "Bring the portfolio," the letter ended; "the north has never been drawn by anyone with a heart."
+
+Werther read it twice — "once with terror, and once, Wilhelm, with something I have not felt since Wahlheim: appetite."` }
+], choices: [
+  { label: "Pack the portfolio; buy furs at Leipzig.", to: "P2" },
+  { label: "Write one letter to Wahlheim before the frontier — the last of the old economy.", to: "P2", mem: "LASTLETTER" }
+]},
+
+"P2": { date: "September 1772 — Riga", ord: 17720915, canon: false, parts: [
+  { head: "SEPTEMBER 1772. RIGA.", text: `From the road east we have a page on the birch forests, and this: "To-day, past noon, the sea. I had it from books, like everything; and like everything it is not what the books said. It does not rage, Wilhelm — it works; it is the diligentest grey workman I ever saw. I sat on a bollard three hours and drew nothing. Some things are for the eye alone, which is a lesson twenty-two years overdue."` }
+], choices: [
+  { label: "Draw nothing; look.", to: "P3" },
+  { label: "Draw it anyway, badly, and keep the sheet as a cure for vanity.", to: "P3", mem: "BADSEA" }
+]},
+
+"P3": { date: "December 1772 — Petersburg", ord: 17721215, canon: false, parts: [
+  { head: "DECEMBER 1772. PETERSBURG.", text: `The Neva froze in November. Of the capital his letters give sledges, ice-hills, the palace like a cliff of shells; and this: no one there had heard of a certain assembly at D— — "I searched their faces for it a month, Wilhelm, and have given over." On the twenty-first of December he skated with the legation children on the river till dark, and came in "glowing, with a hunger I did not examine."` }
+], choices: [
+  { label: "Skate till dark.", to: "P4" },
+  { label: "Teach the youngest to cut a W in the ice.", to: "P4" }
+]},
+
+"P4": { date: "1773", ord: 17730601, canon: false, parts: [
+  { head: "1773.", text: `Of the following year we possess three letters and a bill of lading: colours, Dutch paper, a box of chalks by the Lübeck boat. From June: "The nights here forget to end. I sat drawing at midnight by daylight, and thought: this is the country for those to whom evening was always the enemy."` }
+], choices: [
+  { label: "Stay through the white nights.", to: "P5" },
+  { label: "Stay.", to: "P5" }
+]},
+
+"P5": { date: "1774", ord: 17740301, canon: false, parts: [
+  { head: "1774.", text: `There is in a private cabinet at Petersburg a small portrait in chalks, said to be by a German hand: a lady, not young, with a bird upon her finger. The attribution is doubtful; and the bird may be any bird.` }
+], choices: [
+  { label: "Any bird.", to: "E8" },
+  { label: "A canary, perhaps.", to: "E8" }
+]},
+
+"E8": { date: "1775", ord: 17750601, canon: false, editorhead: true,
+  ending: "THE NORTH", endingId: "E8", parts: [
+  { text: `The trail ends at a signature: "W., master of drawing to the Academy," in the almanac of 1775; lodgings on the Vasilievsky Island; unmarried — which the entries of that country trouble to say.` },
+  { mem: "BADSEA", text: `Among the sheets that came back with the chalks-bill is one marked, in his hand: "the sea — failed." It is the only failure in the box.` },
+  { mem: "LASTLETTER", text: `And in the bundle from Riga there is one letter with a Wahlheim direction, sealed, never sent. We have not opened it. Some things are for the eye alone.` },
+  { text: `Further we cannot follow. The papers this book was made from lie in a drawer in a south-German town; the man, if he lives, is thirty leagues of frost and a language beyond them.` }
+], choices: []},
+
+/* ============== ESCAPE CORRIDOR — THE PLAYERS (theatre) ============== */
+
+"T1": { date: "June 1772 — the troupe", ord: 17720601, canon: false, parts: [
+  { head: "JUNE 1772.", text: `The stage or two became the summer. The troupe was eleven persons, a wardrobe-basket, and a kingdom: the principal, Herr B—, governed it like a small elector, part Lear and part horse-dealer. Werther painted them a forest, a prison, and a moon — "my first moon, Wilhelm, that anyone has needed" — and mended the prompt-books, being the only member whose hand could be read by candlelight.` }
+], choices: [
+  { label: "Paint what they need.", to: "T2" },
+  { label: "Paint the forest with two lindens in it, for private reasons.", to: "T2", mem: "LINDENS" }
+]},
+
+"T2": { date: "September 1772", ord: 17720901, canon: false, parts: [
+  { head: "SEPTEMBER 1772.", text: `By Michaelmas he prompted; by the fair he had parts — messengers, notaries, the friend of the lover. "I am become the man who brings the news, Wilhelm; the audience dreads me, and I have never been so welcome anywhere." Madame R—, who plays the queens and mends the stockings, took his measure in a week: his heart, she ruled, was questionably repaired and professionally promising.` },
+  { flag: "WALTZ", text: `In the dance-scenes he would not waltz. The principal set it down to religion; Madame R— set it down correctly.` }
+], choices: [
+  { label: "Learn the friend of the lover; it is a part with a future.", to: "T3" },
+  { label: "Ask once for the lover, and be refused kindly.", to: "T3", mem: "ASKEDLOVER" }
+]},
+
+"T3": { date: "22 December 1772 — Emilia Galotti", ord: 17721222, canon: false, parts: [
+  { head: "DECEMBER 22, 1772.", text: `On the twenty-second of December, in a residence-town, the troupe gave "Emilia Galotti." He prompted it: from the box beneath the boards he spoke every word of every part, half a breath before the players — the whole play once through, alone, under the stage. "A strange office, Wilhelm: to say all the passions a beat before they happen, softly, so that no one falls."` }
+], choices: [
+  { label: "Say the passions softly, a beat before they happen.", to: "T4" },
+  { label: "Take the book home after, and read the last act twice.", to: "T4" }
+]},
+
+"T4": { date: "1773", ord: 17730901, canon: false, parts: [
+  { head: "1773.", text: `A playbill survives from the Michaelmas fair of 1773: "The Friend of the House, a comedy" — the Friend played by one Herr Wärther. The name is misspelt; the part, we are told, was applauded.` }
+], choices: [
+  { label: "The Friend of the House, nightly.", to: "E9" },
+  { label: "Applauded.", to: "E9" }
+]},
+
+"E9": { date: "1774", ord: 17740401, canon: false, editorhead: true,
+  ending: "THE PLAYERS", endingId: "E9", parts: [
+  { text: `The last document is a letter of Madame R—'s, spring of 1774, to a third party: "Our painter-poet is well. He weeps nightly in the right places, and is paid for it; he has painted us a fourth forest."` },
+  { mem: "LINDENS", text: `"The same two trees stand in all of them, and we have stopped asking."` },
+  { mem: "ASKEDLOVER", text: `"He no longer asks for the lover."` },
+  { text: `Of letters to Wilhelm after 1773 we have none. It may be they ceased; it may be that a man who speaks all the passions nightly, softly, a beat before they happen, has no further need of a correspondent.` }
 ], choices: []}
 
 };
