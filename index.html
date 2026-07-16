@@ -246,104 +246,128 @@ One thing more. The reader of a book follows; the reader of this one chooses. Th
 /* ========================= BOOK I — SPINE ========================= */
 
 "N01": { date: "May–June 1771", ord: 17710504, canon: true, parts: [
-  { head: "MAY 1771.", text: `In the spring of 1771 our friend left his native town — a tangled affair of the heart behind him — and found, a league out, the village of Wahlheim: two lindens before a church, an inn, a fountain. There he sat whole mornings over his Homer, dangerously content. "I treat my poor heart," he writes — to Wilhelm, the friend at home to whom all these letters went — "like a sick child, and gratify its every fancy."
+  { head: "MAY 1771.", text: `In the spring of 1771 a young man named Werther — a quick pencil, a pocket Homer, a heart in questionable repair — left his native town, a love-affair behind him, and found, a league out, the village of Wahlheim: two lindens before a church, an inn, a fountain. There he sat whole mornings over his Homer, dangerously content. "I treat my poor heart," he writes to Wilhelm — the friend at home, to whom all these letters went — "like a sick child."
 
 He made two conquests: the children of the place, and a peasant-lad desperately in love with the widow he serves. The lad's confession worked on him strangely: "my own heart, as though enkindled by the flame, glows and burns within me."
 
-For midsummer the young people had got up a ball; on the way a cousin was to be taken up — the daughter of the district judge, one Charlotte S—.` }
+For midsummer the young people had got up a ball; on the way a cousin was to be taken up: the district judge's daughter, one Charlotte S—.` }
 ], choices: [
-  { label: "Let the widow be: better the lad's picture of her than your own eyes. To the ball.", to: "N04", canon: true },
+  { label: "Let the widow be: better the lad's picture of her than your own eyes. To the ball.", to: "N04", canon: true, mark: "aLETBE" },
   { label: "Walk out with the lad one evening first, and see this widow of his for yourself.",
     to: "W1", log: "June 1771 — you went to see the widow with your own eyes, which Goethe's Werther refused himself." },
-  { label: "Neither — the heart ferments sufficiently of itself. Homer and the fountain until the day of the ball.", to: "N04" }
+  { label: "Neither — the heart ferments sufficiently of itself. Homer and the fountain until the day of the ball.", to: "N04", mark: "aHOMERF" }
 ]},
 
 "W1": { date: "June 1771 — the widow's farm", ord: 17710610, canon: false, parts: [
-  { head: "JUNE 1771.", text: `The farm lay above the village, in good order. The widow was no beauty of the town sort: a strong, quiet, much-tried face; she gave them milk under the pear-tree, and spoke to the lad as one speaks to a good tool one is fond of. Werther saw what he had come to see, and one thing more: the brother, over from the mill on some errand of inheritance, stood in the doorway the whole visit and counted the cups.
+  { head: "JUNE 1771.", text: `Werther walked out with the lad one evening, as asked. The farm lay above the village, in good order. The widow was no beauty of the town sort: a strong, quiet, much-tried face; she gave them milk under the pear-tree, and spoke to the lad as one speaks to a good tool one is fond of. Werther saw what he had come to see, and one thing more: the brother, over from the mill on some errand of inheritance, stood in the doorway the whole visit and counted the cups.
 
 "I understood then," he writes, "that the poor fellow's paradise has a landlord."` }
 ], choices: [
-  { label: "Commend the lad to his mistress, there before the brother — a stranger's word may do what a servant's cannot.", to: "N04", mem: "LADWORD" },
-  { label: "Say nothing. Drink the milk she offers, and carry the picture home unbroken.", to: "N04", mem: "WIDOWSEEN" }
+  { label: "Commend the lad to his mistress, there before the brother — a stranger's word may do what a servant's cannot.", to: "N04", mem: "LADWORD", mark: "aLADW" },
+  { label: "Say nothing. Drink the milk she offers, and carry the picture home unbroken.", to: "N04", mem: "WIDOWSEEN", mark: "aWSEEN" }
 ]},
 
 "N04": { date: "16 June 1771 — the ball", ord: 17710616, canon: true, parts: [
-  { head: "JUNE 16. THE BALL.", text: `In the carriage his partner's aunt gave warning like an oracle: the young lady they were fetching was already engaged, to a very worthy man, away on business. The warning possessed, he says, no interest for him.
+  { head: "JUNE 16. THE BALL.", text: `` },
+  { mark: "aLETBE", text: `Werther let the widow be, as he had resolved; the lad kept his picture whole; and midsummer came.` },
+  { mark: "aHOMERF", text: `Werther kept to Homer and the fountain, and the lad's story faded into the green of the summer; and midsummer came.` },
+  { mark: "aLADW", text: `Werther's word for the lad was said, under the brother's narrow eyes; what it had bought, the year would show. And midsummer came.` },
+  { mark: "aWSEEN", text: `Werther said nothing more of the farm, and carried the lad's picture home unbroken. And midsummer came.` },
+  { text: `To the ball Werther drove with a partner of convenience — an unremarkable girl — and her aunt. On the way they were to take up a cousin at a hunting-lodge; and in the carriage the aunt gave warning like an oracle: the cousin was already engaged, to a very worthy man, away on business. The warning possessed, Werther says, no interest for him.
 
-Then the hall of the hunting-lodge: six children about a girl in simple white with pink ribbons, who was cutting a loaf of bread and giving each child its slice in proportion to age and appetite. This was Charlotte, the judge's daughter. He handed her into the carriage a lost man.
+Then the hall of the lodge: six children about a girl in simple white with pink ribbons, cutting bread and giving each child its slice in proportion to age and appetite. This was the cousin, Charlotte. Werther handed her into the carriage a lost man.
 
 At the ball a lady twice, smiling, pronounced the name Albert at her. "Albert," said Charlotte, "is a worthy man, to whom I am as good as engaged." The waltzes were forming; custom kept each dancer to his own partner; and Charlotte was fond of waltzing.` }
 ], choices: [
   { label: "Propose the exchange of partners: take Charlotte, and let the whole heaven of the evening come down.", to: "N05", set: ["WALTZ"], canon: true },
-  { label: "Waltz with Charlotte — and make her speak of this Albert as you turn.", to: "N05", set: ["WALTZ"], mem: "ASKED" },
+  { label: "Waltz with Charlotte — and make her speak of this Albert as you turn.", to: "N05", set: ["WALTZ"], mem: "ASKED", mark: "aASKED2" },
   { label: "The finger, the smile, the name twice repeated: keep to your own partner, and let another lead Charlotte out.",
     to: "A1", log: "16 June 1771 — you did not waltz with her." }
 ]},
 
 "N05": { date: "16 June 1771 — the storm", ord: 17710616, canon: true, voice: "letter", parts: [
-  { text: `Of what followed, his own letter must speak: —` },
+  { mark: "aASKED2", text: `She answered him in the turning, lightly: promised these two years, to a worthy man of her dead mother's choosing; and the waltz went on.` },
+  { text: `Of what followed, Werther's own letter must speak: —` },
   { head: "JUNE 16, TOWARD MORNING.", text: `Never did I dance more lightly. I felt myself more than mortal, holding the loveliest of creatures in my arms, flying with her as rapidly as the wind till I lost sight of every other object.
 
 The storm we had watched in the horizon broke at last over the music. She gathered the frightened company into a round game, and their fears went out like candles; and when it was over we went to the window. It was still thundering at a distance: a soft rain was pouring down over the country, and filled the air around us with delicious odours. She stood leaning on her elbow, her eyes wandering over the scene; she raised them to the sky, and then turned them upon me; they were moistened with tears; she placed her hand on mine and said — "Klopstock!" She meant the poet, Wilhelm, and his great ode on the thunderstorm; I understood her at once, and sank under the weight of my sensations. I bent over her hand and kissed it in a stream of the most delicious tears. Divine Klopstock! why didst thou not see thy apotheosis in those eyes?` }
 ], choices: [
-  { label: "Settle at Wahlheim for the summer: from the village it is but half a league to Charlotte.", to: "N06", canon: true },
+  { label: "Settle at Wahlheim for the summer: from the village it is but half a league to Charlotte.", to: "N06", canon: true, mark: "aSETTLE" },
   { label: "Thursday Charlotte visits the old vicar of S— in the mountains: go with her, and linger there.",
     to: "V1", log: "1 July 1771 — you lingered at the vicarage of S—." },
-  { label: "Write the whole night to Wilhelm, and swear that no woman you love shall ever waltz with another man.", to: "N06" }
+  { label: "Write the whole night to Wilhelm, and swear that no woman you love shall ever waltz with another man.", to: "N06", mark: "aVOWED" }
 ]},
 
 "V1": { date: "July 1771 — the vicarage", ord: 17710701, canon: false, parts: [
-  { head: "JULY 1771.", text: `The vicarage of S—: an old man restored to life by the sight of her; two walnut-trees with a history; bread and milk in the court; and the vicar's daughter Frederica — a lively, good-humoured brunette, quite competent to amuse one in the country — with her suitor, Herr Schmidt, a polite personage whose silence was not want of talent but ill-humour. Charlotte was fetched home early to her father; Werther, pressed to stay, stayed until Sunday. At the supper-table he preached against ill-humour till Frederica's eyes shone and Schmidt's face went black. "We preach against a great many crimes," he writes; "I never remember a sermon delivered against ill-humour."` }
+  { head: "JULY 1771.", text: `Werther went up with Charlotte on the Thursday. The vicarage of S—: an old man restored to life by the sight of her; two walnut-trees with a history; bread and milk in the court; and the vicar's daughter Frederica — a lively, good-humoured brunette, quite competent to amuse one in the country — with her suitor, Herr Schmidt, a polite personage whose silence was not want of talent but ill-humour. Charlotte was fetched home early to her father; Werther, pressed to stay, stayed until Sunday. At the supper-table he preached against ill-humour till Frederica's eyes shone and Schmidt's face went black. "We preach against a great many crimes," he writes; "I never remember a sermon delivered against ill-humour."` }
 ], choices: [
-  { label: "Amuse Frederica the whole of Saturday. Schmidt may glower: ill-humour is a crime.", to: "N06", mem: "FREDERICA" },
-  { label: "Keep to the old man; hear out the history of the younger walnut-tree, planted the morning his wife was born.", to: "N06", mem: "TREES" }
+  { label: "Amuse Frederica the whole of Saturday. Schmidt may glower: ill-humour is a crime.", to: "N06", mem: "FREDERICA", mark: "aFREDA" },
+  { label: "Keep to the old man; hear out the history of the younger walnut-tree, planted the morning his wife was born.", to: "N06", mem: "TREES", mark: "aTREEA" }
 ]},
 
 "N06": { date: "July 1771", ord: 17710713, canon: true, parts: [
-  { head: "JULY 1771.", text: `July made the thing complete. He was daily at the hunting-lodge, where Charlotte kept her dead mother's house for the judge and eight younger brothers and sisters: he tuned her piano, told the children stories, carried her basket from the fountain.` },
+  { head: "JULY 1771.", text: `` },
+  { mark: "aSETTLE", text: `Werther took two rooms at Wahlheim, half a league from Charlotte's door.` },
+  { mark: "aVOWED", text: `The letter with the vow in it went north at dawn; and Werther took rooms at Wahlheim, half a league from Charlotte's door.` },
+  { mark: "aFREDA", text: `Werther came down from the vicarage on the Sunday with Frederica's laughter in his ears and Herr Schmidt's black look at his back.` },
+  { mark: "aTREEA", text: `Werther came down from the vicarage on the Sunday with the history of the two walnut-trees by heart.` },
+  { mark: "aLODGE", text: `Werther went to the lodge the next morning; the resolution was ash by noon.` },
+  { mark: "aSTARVE", text: `Werther walked his week in the high mountains, and came down by the lodge road as his feet decided. He called it deciding.` },
+  { text: `July made the thing complete. Werther was daily at the hunting-lodge, where Charlotte kept her dead mother's house for the judge and eight younger brothers and sisters: he tuned her piano, told the children stories, carried her basket from the fountain.` },
   { not: "WALTZ", text: `That he had not waltzed with her at the ball had bought him, by his own accounting, nothing.` },
   { text: `"How my heart beats when by accident I touch her finger, or my feet meet hers under the table! I draw back as from a furnace; but a secret force impels me forward again." And once, barely governed: "She loves me!"
 
 At the month's end came Wilhelm's letter with the offer long promised: a secretary's post under the ambassador at D—, a city well away to the north. The minister at court was well disposed; the appointment waited only on a word.` }
 ], choices: [
-  { label: "Refuse the post: is it not in reality the same, whether I shell peas or count lentils? I remain.", to: "N07", canon: true },
+  { label: "Refuse the post: is it not in reality the same, whether I shell peas or count lentils? I remain.", to: "N07", canon: true, mark: "aREFUSE" },
   { label: "Say yes. Let the minister's word be the knife your own hand cannot be — go in August.",
     to: "A2", log: "20 July 1771 — you accepted the embassy post and fled before the fruit could rot." },
-  { label: "Do not answer at all. Let Wilhelm's letter lie in the drawer with the blotting-sand still on it.", to: "N07", mem: "UNANSWERED" }
+  { label: "Do not answer at all. Let Wilhelm's letter lie in the drawer with the blotting-sand still on it.", to: "N07", mem: "UNANSWERED", mark: "aUNANS" }
 ]},
 
 "N07": { date: "30 July 1771 — Albert", ord: 17710730, canon: true, parts: [
-  { head: "JULY 30.", text: `On the thirtieth of July Albert arrived — Charlotte's promised husband, home from his business at last. "The best of men," Werther calls him at once, and means it, which makes it worse: cool where he burns, exact where he overflows, fully sensible of the treasure he possesses, and unfailingly kind to the man who covets it. "Fortunately I was not present at their meeting: it would have broken my heart."` },
+  { head: "JULY 30.", text: `` },
+  { mark: "aREFUSE", text: `The refusal went north to Wilhelm — peas and lentils — and the matter seemed closed.` },
+  { mark: "aUNANS", text: `Wilhelm's letter lay in the drawer unanswered, the blotting-sand still on it.` },
+  { text: `On the thirtieth of July Albert arrived — Charlotte's promised husband, home from his business at last. "The best of men," Werther calls him at once, and means it, which makes it worse: cool where he burns, exact where he overflows, fully sensible of the treasure he possesses, and unfailingly kind to the man who covets it. "Fortunately I was not present at their meeting: it would have broken my heart."` },
   { mem: "ASKED", text: `Albert's name, at least, held no ambush for him; she had answered it herself, in the waltz.` },
   { text: `One thing remained in Werther's own gift: what he and this man should be to one another.` }
 ], choices: [
-  { label: "Take the man's friendship whole: walks, confidences, Charlotte between you like a book held open.", to: "N08", mems: ["ALBERT","WARM"], canon: true },
-  { label: "Be correct, be cordial, be elsewhere when he calls.", to: "N08", mems: ["ALBERT","COOL"] },
-  { label: "Study Albert for the flaw, and keep a private ledger of it.", to: "N08", mems: ["ALBERT","COOL"] }
+  { label: "Take the man's friendship whole: walks, confidences, Charlotte between you like a book held open.", to: "N08", mems: ["ALBERT","WARM"], canon: true, mark: "aWARMA" },
+  { label: "Be correct, be cordial, be elsewhere when he calls.", to: "N08", mems: ["ALBERT","COOL"], mark: "aCOOLA" },
+  { label: "Study Albert for the flaw, and keep a private ledger of it.", to: "N08", mems: ["ALBERT","COOL"], mark: "aLEDG" }
 ]},
 
 "N08": { date: "12 August 1771 — the pistols", ord: 17710812, canon: true, voice: "letter", parts: [
-  { text: `In mid-August he borrowed Albert's pistols for a walking-tour in the mountains. What passed over them he set down at length; and we give it whole, for everything after hangs from it.` },
+  { mark: "aWARMA", text: `The friendship took: walks, confidences, Charlotte between them like a book held open.` },
+  { mark: "aCOOLA", text: `They settled into a correct, cool esteem, each elsewhere when the other called.` },
+  { mark: "aLEDG", text: `Werther watched the man for the flaw; the ledger stayed empty, which was its own kind of entry.` },
+  { text: `In mid-August Werther borrowed Albert's pistols for a walking-tour in the mountains. What passed over them he set down at length; and we give it whole, for everything after hangs from it.` },
   { head: "AUGUST 12.", text: `Certainly Albert is the best fellow in the world. As I was walking up and down his room, my eye fell upon his pistols. "Lend me those pistols," said I, "for my journey." He was telling how caution had once cost him dear — a servant, a ramrod left in the barrel, a maid's shattered thumb — and I had ceased to listen; and with a sudden motion I pointed the mouth of the pistol to my forehead, over the right eye. "What do you mean?" cried Albert, turning it aside. "It is not loaded," said I. "And even if not," he answered with impatience, "what can you mean? I cannot comprehend how a man can be so mad as to shoot himself: the bare idea shocks me."
 
 We argued it the length of the afternoon — he with the sound sense of a man who means to keep the road, I with the whole of my heart. "The question," I said at last, "is not whether a man is strong or weak, but whether he is able to endure the measure of his sufferings. It is just as absurd to call a man a coward who destroys himself, as to call a man a coward who dies of a malignant fever." — "Paradox! all paradox!" cried Albert. We parted without conviction on either side. How rarely in this world do men understand each other!` }
 ], choices: [
-  { label: "Let it rest. Men do not understand one another; take the pistols and walk.", to: "N09", canon: true },
-  { label: "Write the argument out fair for Wilhelm — the self-destroyed no more cowards than men dead of fever — and polish it like an instrument.", to: "N09", mem: "FEVER" }
+  { label: "Let it rest. Men do not understand one another; take the pistols and walk.", to: "N09", canon: true, mark: "aREST" },
+  { label: "Write the argument out fair for Wilhelm — the self-destroyed no more cowards than men dead of fever — and polish it like an instrument.", to: "N09", mem: "FEVER", mark: "aFEV" }
 ]},
 
 "N09": { date: "August 1771", ord: 17710815, canon: true, parts: [
-  { head: "AUGUST 1771.", text: `The glorious summer turned in his hands. The full heart that had brought all paradise before him now showed him, behind every leaf, the devouring: "the universe is to me a fearful monster, for ever devouring its own offspring." On his birthday, the twenty-eighth, came a packet from the two of them: a small Homer for his walks, and one of the pink ribbons Charlotte had worn the day he first saw her.` },
+  { head: "AUGUST 1771.", text: `` },
+  { mark: "aREST", text: `Werther let the dispute rest, took the pistols, and walked.` },
+  { mark: "aFEV", text: `The argument went to Wilhelm written out fair, polished till it shone; then Werther took the pistols, and walked.` },
+  { text: `The glorious summer turned in Werther's hands. The full heart that had brought all paradise before him now showed him, behind every leaf, the devouring: "the universe is to me a fearful monster, for ever devouring its own offspring." On his birthday, the twenty-eighth, came a packet from the two of them: a small Homer for his walks, and one of the pink ribbons Charlotte had worn the day he first saw her.` },
   { flag: "WALTZ", text: `The very knot his eyes had followed through the whole of that first waltz.` }
 ], choices: [
-  { label: "Kiss the ribbon a thousand times.", to: "N10", canon: true },
-  { label: "Lay ribbon and Homer in a drawer, and turn the key. What is consecrated, burns.", to: "N10", mem: "DRAWER" }
+  { label: "Kiss the ribbon a thousand times.", to: "N10", canon: true, mark: "aKISS" },
+  { label: "Lay ribbon and Homer in a drawer, and turn the key. What is consecrated, burns.", to: "N10", mem: "DRAWER", mark: "aDRW" }
 ]},
 
 "N10": { date: "3 September 1771", ord: 17710903, canon: true, parts: [
-  { head: "SEPTEMBER 3.", mem: "UNANSWERED", text: `Wilhelm's second letter came the sharper for the unanswered first.` },
-  { head: "SEPTEMBER 3.", notMem: "UNANSWERED", text: `` },
-  { text: `Charlotte was gone to town for some weeks; Albert was always at her side; Wilhelm grew stern. "I must away. Thank you for determining my wavering purpose: I must away."` }
+  { head: "SEPTEMBER 3.", text: `` },
+  { mark: "aKISS", text: `The ribbon lived in Werther's breast-pocket now.` },
+  { mark: "aDRW", text: `Ribbon and Homer lay locked away; the key rode in Werther's pocket like a splinter.` },
+  { mem: "UNANSWERED", text: `Wilhelm's second letter came the sharper for the unanswered first.` },
+  { text: `Charlotte was gone to town for some weeks; Albert was always at her side; Wilhelm grew stern. And Werther wrote: "I must away. Thank you for determining my wavering purpose: I must away."` }
 ], choices: [
   { label: "Go — take the post at D— after all. Two hours of farewell to-night, and at sunrise the horses.", to: "N11", canon: true },
   { label: "Unpack the trunk. A man does not outride the sun by turning his horse west.",
@@ -351,51 +375,64 @@ We argued it the length of the afternoon — he with the sound sense of a man wh
 ]},
 
 "N11": { date: "10 September 1771 — farewell", ord: 17710910, canon: true, parts: [
-  { head: "SEPTEMBER 10.", text: `The last evening was spent, all three, on the terrace under the chestnut-trees, the moon rising behind the wooded hill. Charlotte spoke of her dead mother, and of the country behind death: "We shall live again, Werther — but shall we know one another again? What do you think? what do you say?"
+  { head: "SEPTEMBER 10.", text: `Werther's last evening was spent, all three together, on the terrace under the chestnut-trees, the moon rising behind the wooded hill. Charlotte spoke of her dead mother, and of the country behind death: "We shall live again, Werther — but shall we know one another again? What do you think? what do you say?"
 
 "We shall see each other again," he said; "here, and hereafter." He kept, through two hours, the courage not to betray his intention. She never suspected it was a leave-taking.
 
 They walked down the avenue; he stood and watched her white dress vanish by the garden gate; and at sunrise the horses were at the door.` }
 ], choices: [
-  { label: "Betray nothing to Charlotte. Leave her the smiling to-morrow she wished you.", to: "N12", canon: true },
-  { label: "Let one sentence slip — 'should I say for ever?' — and watch it pass Charlotte by.", to: "N12", mem: "HALFSAID" }
+  { label: "Betray nothing to Charlotte. Leave her the smiling to-morrow she wished you.", to: "N12", canon: true, mark: "aQUIETD" },
+  { label: "Let one sentence slip — 'should I say for ever?' — and watch it pass Charlotte by.", to: "N12", mem: "HALFSAID", mark: "aHALF" }
 ]},
 
 /* ========================= BOOK II — SPINE ========================= */
 
 "N12": { date: "Winter 1771 at D—", ord: 17711020, canon: true, parts: [
-  { head: "WINTER AT D—.", text: `The embassy received him with its climate. The ambassador: a punctilious blockhead, never pleased because never pleased with himself, forever returning Werther's papers for the style of them: "they will do; but one may always improve by a better word, a more appropriate particle." The society: "brilliant wretchedness; the ambition of rank — how they watch, how they toil, to gain one step!" And the one compensation: the Count of C—, a large capacious mind with warmth in it, who perceived at the first word that they understood each other.` }
+  { head: "WINTER AT D—.", text: `` },
+  { mark: "aQUIETD", text: `Werther was gone by sunrise, the secret kept whole.` },
+  { mark: "aHALF", text: `The one sentence had slipped — should I say for ever? — and had passed her by unheard; by sunrise Werther was on the road.` },
+  { mark: "aWALLW", text: `The wall of work went up, course by course, through the autumn.` },
+  { mark: "aCOUS", text: `The first measured, cousinly letter went south in October, and read like a well-swept room.` },
+  { text: `The embassy received Werther with its climate. The ambassador: a punctilious blockhead, never pleased because never pleased with himself, forever returning Werther's papers for the style of them: "they will do; but one may always improve by a better word, a more appropriate particle." The society: "brilliant wretchedness; the ambition of rank — how they watch, how they toil, to gain one step!" And the one compensation: the Count of C—, a large capacious mind with warmth in it, who perceived at the first word that they understood each other.` }
 ], choices: [
-  { label: "Give the Count your evenings; he is the one mind here in sympathy with your own.", to: "N13", canon: true },
+  { label: "Give the Count your evenings; he is the one mind here in sympathy with your own.", to: "N13", canon: true, mark: "aEVEN" },
   { label: "Work, only work: tire yourself into honest sleep, and let the society of D— play on without you.", to: "N13", mem: "DESKWORK" },
-  { label: "Answer the ambassador's grammar aloud, for once, before the assembled clerks.", to: "N13", mem: "INSOLENT" }
+  { label: "Answer the ambassador's grammar aloud, for once, before the assembled clerks.", to: "N13", mem: "INSOLENT", mark: "aINSO" }
 ]},
 
 "N13": { date: "January 1772", ord: 17720120, canon: true, parts: [
-  { head: "JANUARY 1772.", mem: "DESKWORK", text: `The wall of work held until the snow came.` },
-  { text: `From an inn in a snowstorm he wrote — to Charlotte herself, the one letter of that winter with blood in it: "I stand as before a raree-show; I see the little puppets move, and I ask whether it is not an optical illusion. I am myself one of them."` },
+  { head: "JANUARY 1772.", text: `` },
+  { mark: "aEVEN", text: `The evenings at Count C—'s became the pillar of Werther's week.` },
+  { mark: "aINSO", text: `The scene before the clerks was a week's talk in the chancery, and the ambassador's pen grew no kinder.` },
+  { mem: "DESKWORK", text: `The wall of work held until the snow came.` },
+  { text: `From an inn in a snowstorm Werther wrote — to Charlotte herself, the one letter of that winter with blood in it: "I stand as before a raree-show; I see the little puppets move, and I ask whether it is not an optical illusion. I am myself one of them."` },
   { mem: "COUSINLY", text: `(It was not, as it happens, his first letter southward; he had kept his measured, cousinly page each month.)` },
   { text: `And at D— one being interested him: a Fräulein B—, blue-eyed, much-souled, her rank a torment to her, with whom he spoke whole evenings of rural happiness — and of Charlotte. Wilhelm asked, reasonably, what the lady was to him.` }
 ], choices: [
-  { label: "Fräulein B— is a glass held toward the south: through her I look to Wahlheim. Write it so.", to: "N14", canon: true },
+  { label: "Fräulein B— is a glass held toward the south: through her I look to Wahlheim. Write it so.", to: "N14", canon: true, mark: "aGLASS" },
   { label: "Or set the glass down, and see Fräulein B— herself: not Charlotte's likeness — a soul entire, and it inclines to me.",
     to: "N14", set: ["BELLA"], log: "8 February 1772 — you looked at Fräulein B— and saw her." }
 ]},
 
 "N14": { date: "February 1772", ord: 17720217, canon: true, parts: [
-  { head: "FEBRUARY 1772.", text: `Two letters crossed him that month like two winds. First the minister's reprimand — gentle, and unbearable.` },
+  { head: "FEBRUARY 1772.", text: `` },
+  { mark: "aGLASS", text: `He had written it so: a glass, nothing more. The winter believed him no better than we do.` },
+  { text: `Two letters crossed Werther that month like two winds. First the minister's reprimand — gentle, and unbearable.` },
   { mem: "INSOLENT", text: `It cited, among other matter, a certain scene played before the assembled clerks.` },
   { text: `Then the news from Wahlheim: Albert and Charlotte were married. There had been no announcement to him; they had meant to spare him the day, and so gave it to him entire.` },
   { mem: "ALBERT", text: `"I thank you, Albert, for having deceived me. You are now united, and her picture still remains here. Well! let it remain. I hold the second place in her heart, and I mean to keep it. Farewell, Albert — farewell, angel of heaven — farewell, Charlotte!"` },
   { notMem: "ALBERT", text: `"So you are Albert," he writes — to a man he had never once met — "a name first; then a hand in a church register. I hold the second place in her heart, and I mean to keep it. Farewell, Albert, whom I do not know — farewell, angel of heaven — farewell, Charlotte!"` },
   { mem: "WARM", text: `To Wilhelm he added one line: that the deceit was Albert's first unkindness, and had been meant as a kindness, which was the worst of it.` }
 ], choices: [
-  { label: "Let Charlotte's picture hang where it hangs.", to: "N15", canon: true },
-  { label: "Take Charlotte's picture down at last; bury it among your papers, as the letter had vowed.", to: "N15", mem: "PICTUREDOWN" }
+  { label: "Let Charlotte's picture hang where it hangs.", to: "N15", canon: true, mark: "aHANG" },
+  { label: "Take Charlotte's picture down at last; bury it among your papers, as the letter had vowed.", to: "N15", mem: "PICTUREDOWN", mark: "aPICT" }
 ]},
 
 "N15": { date: "15–16 March 1772 — the assembly", ord: 17720315, canon: true, setFlags: ["SCAR"], parts: [
-  { head: "MARCH 15–16.", text: `Count C— had him to dine, on an evening when the nobility assemble at his house. Werther, thinking of nothing, stayed too long. The noble company arrived — the S—s, the T—s — and the whisper went round the room, until the Count drew him to a window: "You know our ridiculous customs; the company is displeased to see you here." The Count pressed his hand in a manner that said everything; Werther stole away, and read in his Homer how Ulysses was the guest of the excellent swineherd.
+  { head: "MARCH 15–16.", text: `` },
+  { mark: "aHANG", text: `The picture stayed on its nail.` },
+  { mark: "aPICT", text: `The picture came down and went, wrapped, among his papers; the nail stayed in the wall.` },
+  { text: `Count C— had Werther to dine, on an evening when the nobility assemble at his house. Werther, thinking of nothing, stayed too long. The noble company arrived — the S—s, the T—s — and the whisper went round the room, until the Count drew him to a window: "You know our ridiculous customs; the company is displeased to see you here." The Count pressed his hand in a manner that said everything; Werther stole away, and read in his Homer how Ulysses was the guest of the excellent swineherd.
 
 By morning it was all over town. And Fräulein B—, met in the walk, wept: she had heard his condemnation the whole length of breakfast, and had not dared defend him. "A hundred times I have seized a knife, to give ease to this oppressed heart. They tell of a noble race of horses that, over-ridden, bite open a vein to breathe. So I."` }
 ], choices: [
@@ -410,9 +447,9 @@ By morning it was all over town. And Fräulein B—, met in the walk, wept: she 
 
 "N16": { date: "24 March – 19 April 1772", ord: 17720324, canon: true, parts: [
   { head: "MARCH 18.", mark: "rebuffed", text: `She received him alone, and wept, and was even: "You honour me, and you deceive yourself. I have watched your face when the talk was of a certain lady at Wahlheim. Go home, Werther." — Home! Which of his homes did she intend?` },
-  { head: "MARCH 24 – APRIL 19.", text: `The resignation went in; the court, with reluctance, granted it. The crown prince sent five-and-twenty ducats at parting; and an admirer of another kind — the Prince of ——, who liked his company — offered his hunting-estates for the spring.` }
+  { head: "MARCH 24 – APRIL 19.", text: `Werther's resignation went in; the court, with reluctance, granted it. The crown prince sent five-and-twenty ducats at parting; and an admirer of another kind — the Prince of ——, who liked his company — offered his hunting-estates for the spring.` }
 ], choices: [
-  { label: "Depart without farewells. The Count pressed your hand at the window; let that suffice.", to: "N17", canon: true },
+  { label: "Depart without farewells. The Count pressed your hand at the window; let that suffice.", to: "N17", canon: true, mark: "aNOFARE" },
   { label: "Go first to Count C—: thank him, and leave one friendship standing whole behind you.",
     to: "N17", set: ["PATRON"], mark: "countfriend",
     log: "April 1772 — you went to Count C— and parted from him as a friend." }
@@ -420,16 +457,20 @@ By morning it was all over town. And Fräulein B—, met in the walk, wept: she 
 
 "N17": { date: "May 1772", ord: 17720505, canon: true, parts: [
   { mark: "countfriend", text: `The Count kept him to dinner on the last evening, and embraced him at parting: "The courts of this world will shut on you; you have a talent for it. When one does, knock at my door — it is not a court."` },
-  { head: "MAY 1772.", text: `On the road he made pilgrimage to his native place: the great elm; the schoolroom become a shop; the stream where a boy had stood surmising the countries the water must pass through. "Man needs but little earth for enjoyment," he writes, "and still less for his final repose." By mid-May he was at the Prince's hunting-lodge — an honest, unaffected man, who valued Werther's talents more than his heart, which was his only pride.` }
+  { mark: "aNOFARE", text: `Werther left D— without farewells, as he had resolved.` },
+  { head: "MAY 1772.", text: `On the road south Werther made pilgrimage to his native place: the great elm; the schoolroom become a shop; the stream where a boy had stood surmising the countries the water must pass through. "Man needs but little earth for enjoyment," he writes, "and still less for his final repose." By mid-May he was at the Prince's hunting-lodge — an honest, unaffected man, who valued Werther's talents more than his heart, which was his only pride.` }
 ], choices: [
-  { label: "An hour under the old elm, and ride on.", to: "N18", canon: true },
-  { label: "Knock besides at the old house-door; ask to see the room where you were born.", to: "N18", mem: "OLDROOM" }
+  { label: "An hour under the old elm, and ride on.", to: "N18", canon: true, mark: "aELM" },
+  { label: "Knock besides at the old house-door; ask to see the room where you were born.", to: "N18", mem: "OLDROOM", mark: "aROOM" }
 ]},
 
 "N18": { date: "May–June 1772, at the Prince's", ord: 17720525, canon: true, parts: [
-  { head: "MAY 25 – JUNE 11.", text: `One plan he had nursed in secret: to enter the army under the Prince, who is a general. The Prince talked him out of it in a single walk, with reasons it would have been madness not to hear. What remained was grace without ease: "There is nothing in common between us. His conversation entertains me no more than a well-written book. I shall remain a week longer, and then—" The sentence would not finish itself.` }
+  { head: "MAY 25 – JUNE 11.", text: `` },
+  { mark: "aELM", text: `The hour under the elm was taken; then the road again.` },
+  { mark: "aROOM", text: `They had let him into the old house — the room he was born in is a linen-closet now. Werther said nothing for a mile after.` },
+  { text: `One plan Werther had nursed in secret: to enter the army under the Prince, who is a general. The Prince talked him out of it in a single walk, with reasons it would have been madness not to hear. What remained was grace without ease: "There is nothing in common between us. His conversation entertains me no more than a well-written book. I shall remain a week longer, and then—" The sentence would not finish itself.` }
 ], choices: [
-  { label: "Let the army scheme fall. Drift a week longer, then follow where the heart pulls — back toward Wahlheim.", to: "N19", canon: true },
+  { label: "Let the army scheme fall. Drift a week longer, then follow where the heart pulls — back toward Wahlheim.", to: "N19", canon: true, mark: "aDRIFT" },
   { label: "Give the Prince not your talents but your truth: tell him everything this evening — Charlotte, the assembly at Count C—'s, the whole map of your ruin.",
     to: "N19", set: ["PATRON"], mark: "candor",
     log: "June 1772 — you opened your heart to the Prince, and he became your friend." },
@@ -444,37 +485,49 @@ By morning it was all over town. And Fräulein B—, met in the walk, wept: she 
 "N19": { date: "July 1772", ord: 17720716, canon: true, parts: [
   { mark: "candor", text: `The Prince heard him to the end, and at parting held both his hands: "You are wounded, not worthless. When the winter of the thing arrives, come to me. I mean it as a standing order."` },
   { mark: "coldpost", text: `The letters he had written for employment went unanswered. The wide world keeps no seat for a man who only wants distance.` },
-  { head: "JULY 1772.", text: `"Once more I am a wanderer, a pilgrim, through the world. But what else are you!" By late July he had ceased pretending the mines were his object.` }
+  { mark: "aDRIFT", text: `He let the army scheme fall, and drifted the promised week.` },
+  { mark: "aFAR", text: `He rode farther, by longer detours; and the detours, given time, bent home.` },
+  { mark: "aADMIT", text: `He admitted the method at last: every road he took bent, given time, toward the one valley.` },
+  { head: "JULY 1772.", text: `"Once more I am a wanderer, a pilgrim, through the world. But what else are you!" By late July Werther had ceased pretending the mines were his object.` }
 ], choices: [
-  { label: "To Wahlheim, then: smile at the heart, and obey it.", to: "N20", canon: true },
+  { label: "To Wahlheim, then: smile at the heart, and obey it.", to: "N20", canon: true, mark: "aOBEYW" },
   { label: "One detour more — a week at the falls — to prove the heart can wait.", to: "N20", mem: "DETOUR" }
 ]},
 
 "N20": { date: "August 1772", ord: 17720804, canon: true, parts: [
-  { head: "AUGUST 1772.", mem: "DETOUR", text: `The extra week at the falls proved what delay always proves.` },
-  { head: "AUGUST 1772.", notMem: "DETOUR", text: `` },
+  { head: "AUGUST 1772.", text: `` },
+  { mark: "aOBEYW", text: `Werther turned the horse for Wahlheim, and looked at no other road.` },
+  { mark: "aSTRICT", text: `The calendar of permitted days was kept strictly to the last.` },
+  { mem: "DETOUR", text: `The extra week at the falls proved what delay always proves.` },
   { mem: "TUESDAY", text: `The broken Tuesday had cost him a week of Charlotte's coolness, and he counted it cheap.` },
-  { text: `August brought a death: a peasant woman whose children he had petted through his first summer had lost her youngest, little John; her husband was back from Switzerland fevered and penniless. And at the lodge, everything and nothing was changed. "When I pass out at the same gate, along the same road that first carried me to Charlotte — all, all is altered! And sometimes, lost in dreaming, I say to myself: if Albert were to die? — and I run after the phantasm to the edge of a precipice, and shrink back trembling."` }
+  { text: `August brought a death: a peasant woman whose children Werther had petted through his first summer had lost her youngest, little John; her husband was back from Switzerland fevered and penniless. And at the lodge, everything and nothing was changed. "When I pass out at the same gate, along the same road that first carried me to Charlotte — all, all is altered! And sometimes, lost in dreaming, I say to myself: if Albert were to die? — and I run after the phantasm to the edge of a precipice, and shrink back trembling."` }
 ], choices: [
-  { label: "To Charlotte's lodge the first evening.", to: "N21", canon: true },
+  { label: "To Charlotte's lodge the first evening.", to: "N21", canon: true, mark: "aFIRSTE" },
   { label: "Circle the lodge three days before knocking.", to: "N21", mem: "CIRCLED" }
 ]},
 
 "N21": { date: "4 September 1772 — the lad again", ord: 17720904, canon: true, parts: [
-  { head: "SEPTEMBER 4.", mem: "CIRCLED", text: `Three evenings he had watched the candles of the lodge from the hill before he could knock.` },
-  { head: "SEPTEMBER 4.", notMem: "CIRCLED", text: `` },
+  { head: "SEPTEMBER 4.", text: `` },
+  { mark: "aFIRSTE", text: `Werther was at the lodge the first evening; the children still knew him.` },
+  { mark: "aUPHOME", text: `Werther came up from the mines by the straight road, with September on the hills.` },
+  { mark: "aWHEELA", text: `The wheel-house drawing went ahead to Wilhelm — proof the hand still serves — and its maker followed it out of the hills.` },
+  { mem: "CIRCLED", text: `Three evenings he had watched the candles of the lodge from the hill before he could knock.` },
   { text: `The peasant-lad — he whose love for his widowed mistress had so kindled Werther in the first spring — was dismissed from her service. Werther met him on a road and had the whole story: the passion grown past governing; the chamber; the violence he could not remember and would not deny; the brother's triumph; and a new servant in his place, whom the widow, it was said for certain, would marry. The lad was firmly resolved not to live to see it.` },
   { mem: "WIDOWSEEN", text: `Werther saw again the strong, quiet face under the pear-tree, and the counted cups.` },
   { mem: "LADWORD", text: `The brother, meeting Werther on the road, touched his hat with an insolence that remembered the stranger who had meddled for a servant in June.` },
   { text: `"I read and re-read this history, Wilhelm: it is the history of your friend! And I am not half so brave, not half so determined, as that poor wretch, with whom I scarcely dare compare myself."` }
 ], choices: [
-  { label: "Listen to the end, and carry the story home like a live coal.", to: "CAN", canon: true },
-  { label: "Go up to the brother once more, and speak for the man.", to: "CAN", mem: "LADWORD" },
-  { label: "Press money on the lad; beg him to enlist — the king's shilling, and another valley.", to: "CAN", mem: "SOLDIER" }
+  { label: "Listen to the end, and carry the story home like a live coal.", to: "CAN", canon: true, mark: "aCOAL" },
+  { label: "Go up to the brother once more, and speak for the man.", to: "CAN", mem: "LADWORD", mark: "aPLEADA" },
+  { label: "Press money on the lad; beg him to enlist — the king's shilling, and another valley.", to: "CAN", mem: "SOLDIER", mark: "aSHILL" }
 ]},
 
 "CAN": { date: "12 September 1772 — the canary", ord: 17720912, canon: true, parts: [
-  { head: "SEPTEMBER 12.", text: `Charlotte had a canary on her hand, a present for the children. "He shall kiss you too," she said, and held the bird across; and its little beak began the journey from her lips toward his.` }
+  { head: "SEPTEMBER 12.", text: `` },
+  { mark: "aCOAL", text: `The lad's story came home with Werther like a live coal, and was told to no one.` },
+  { mark: "aPLEADA", text: `The brother heard Werther out with a touch of the hat, and promised nothing.` },
+  { mark: "aSHILL", text: `The lad took the money without looking at it, and promised nothing.` },
+  { text: `Days later, at the lodge: Charlotte had a canary on her hand, a present for the children. "He shall kiss you too," she said — and the little beak began its journey from her lips toward Werther's.` }
 ], choices: [
   { label: "Take the bird's kiss.", to: "WAL", mem: "CANARY", canon: true },
   { label: "Turn your face away.", to: "C1", log: "12 September 1772 — you refused the bird's kiss." }
@@ -483,17 +536,20 @@ By morning it was all over town. And Fräulein B—, met in the walk, wept: she 
 "C1": { date: "13 September 1772", ord: 17720912, canon: false, parts: [
   { head: "SEPTEMBER 13.", text: `Charlotte put the bird by without a word, and spoke of the children's lessons. Next morning, meeting him on the Wahlheim road, she was gentle and far, like fine weather in another valley. Neither made the apology; each watched the other not make it. Of all the wounds of that autumn he counts this one strangest: "that a man may bleed from what he himself refused."` }
 ], choices: [
-  { label: "Beg Charlotte's pardon next day, with a jest about the bird.", to: "WAL" },
-  { label: "Let it stand. A man must refuse something.", to: "WAL", mem: "REFUSED" }
+  { label: "Beg Charlotte's pardon next day, with a jest about the bird.", to: "WAL", mark: "aJEST" },
+  { label: "Let it stand. A man must refuse something.", to: "WAL", mem: "REFUSED", mark: "aSTAND" }
 ]},
 
 "WAL": { date: "15 September 1772 — the walnut-trees", ord: 17720915, canon: true, parts: [
-  { head: "SEPTEMBER 15.", mem: "CANARY", text: `"She should not do it!" he writes of the bird's kiss. "She ought not to inflame my imagination with these pictures of heavenly innocence. And why not? — She trusts me so!"` },
+  { head: "SEPTEMBER 15.", text: `` },
+  { mem: "CANARY", text: `"She should not do it!" Werther writes of the bird's kiss. "She ought not to inflame my imagination with these pictures of heavenly innocence. And why not? — She trusts me so!"` },
+  { mark: "aJEST", text: `The jest about the bird was made next day, and taken kindly, and mended little.` },
+  { mark: "aSTAND", text: `The refusal stood. The air between them wore it like a small scar.` },
   { text: `That week, at S— in the mountains — where Charlotte had loved to visit the old vicar under his two great walnut-trees — the new vicar's wife had the trees felled: the falling leaves dirtied her yard, and the boys' stones at nut-time disturbed her meditations. The village murmured; Werther could, he said, have slain the man who struck the first stroke.` },
   { mem: "TREES", text: `The younger tree was of an age with the old vicar's dead wife. He had heard its history under its own shade.` },
   { mem: "FREDERICA", text: `Frederica, the vicar's daughter he had amused a whole Saturday once, was married into the next parish and gone.` }
 ], choices: [
-  { label: "Rage to Wilhelm — 'I could run mad!' — and let it lie.", to: "N22", canon: true },
+  { label: "Rage to Wilhelm — 'I could run mad!' — and let it lie.", to: "N22", canon: true, mark: "aRAGE" },
   { label: "Rouse the village: a letter read aloud at the inn, and names named in it.",
     to: "WT1", log: "September 1772 — you raised the village over the walnut-trees." }
 ]},
@@ -501,39 +557,49 @@ By morning it was all over town. And Fräulein B—, met in the walk, wept: she 
 "WT1": { date: "late September 1772 — the protest", ord: 17720916, canon: false, setMems: ["SCANDAL"], parts: [
   { head: "SEPTEMBER 1772.", text: `The letter was read at the inn to great effect. The parish murmured aloud a full week; the vicar's wife kept her rooms; the steward talked of law. Then the district judge — Charlotte's father — sent a friendly word across the valley: the trees were down and would stay down, and a stranger does a village no service by heating it. The murmur cooled, as murmurs do. Werther had made, without knowing it, his character in the district: a warm head — the officials said it warmly.` }
 ], choices: [
-  { label: "Bow to the judge's word.", to: "N22" },
-  { label: "Answer the judge with Homer: what are laws to fallen shade?", to: "N22" }
+  { label: "Bow to the judge's word.", to: "N22", mark: "aBOW" },
+  { label: "Answer the judge with Homer: what are laws to fallen shade?", to: "N22", mark: "aHOMANS" }
 ]},
 
 "N22": { date: "12 October 1772", ord: 17721010, canon: true, parts: [
-  { head: "OCTOBER 12.", text: `Two books lay on his table that autumn: the little Homer Charlotte had given him, and his own translation of Ossian — the melancholy northern songs of mist, tombs, and dead warriors. "Ossian has superseded Homer in my heart."` }
+  { head: "OCTOBER 12.", text: `` },
+  { mark: "aRAGE", text: `The rage went into a letter to Wilhelm, and the letter into the post; and the trees stayed down.` },
+  { mark: "aBOW", text: `Werther bowed to the judge's word, and the village cooled around him.` },
+  { mark: "aHOMANS", text: `His answer went back across the valley — what are laws to fallen shade? — and the judge did not reply.` },
+  { mark: "aFIRSTL", text: `Werther went up to the lodge at first light, and was received kindly. Kindly was the whole of it.` },
+  { mark: "aSTATIONS", text: `He came at Charlotte by the old stations — fountain, lindens, walk — arriving all morning long.` },
+  { text: `Two books lay on Werther's table that autumn: the little Homer Charlotte had given him, and his own translation of Ossian — the melancholy northern songs of mist, tombs, and dead warriors. "Ossian has superseded Homer in my heart."` }
 ], choices: [
-  { label: "Ossian. The mists, the tombs, the voices in the torrent — they know my case.", to: "N23", canon: true },
+  { label: "Ossian. The mists, the tombs, the voices in the torrent — they know my case.", to: "N23", canon: true, mark: "aOSSA" },
   { label: "Homer. The hearth, the homecoming, the swineherd's fire: keep the old daylight, though it shame you.",
-    to: "N23", set: ["HOMER"], log: "12 October 1772 — you kept to Homer against the mists." }
+    to: "N23", set: ["HOMER"], mark: "aHOMB", log: "12 October 1772 — you kept to Homer against the mists." }
 ]},
 
 "N23": { date: "October–November 1772", ord: 17721019, canon: true, parts: [
-  { head: "OCTOBER — NOVEMBER.", text: `From here the papers thicken, and our office thins: the letters must speak more, and we less.
+  { head: "OCTOBER — NOVEMBER.", text: `` },
+  { mark: "aOSSA", text: `The Ossian rode in Werther's pocket now; the Homer stayed behind on the table.` },
+  { mark: "aHOMB", text: `The little Homer rode in Werther's pocket now; the Ossian stayed behind on the table.` },
+  { text: `From here the papers thicken, and our office thins: the letters must speak more, and we less.
 
 "Alas! the void — the fearful void which I feel in my bosom! Sometimes I think, if I could only once — but once — press her to my heart, this dreadful void would be filled."` },
   { not: "HOMER", text: `"At evening the mist lies on the meadows and moves; and I persuade myself that it is peopled, and go out to walk among the great grey company."` },
   { flag: "HOMER", text: `"At evening I read of the swineherd's fire, and of the old dog that knew his master again after twenty years; and for an hour there is something like a roof over me."` },
   { text: `"Yesterday, when I took leave, Charlotte seized me by the hand and said, 'Adieu, dear Werther.' Dear Werther! It was the first time she ever called me dear: the sound sunk deep. I have repeated it a hundred times; and last night, going to bed, I suddenly said, 'Good night, dear Werther!' — and could not but laugh at myself."` }
 ], choices: [
-  { label: "Go on as before: daily to Charlotte, and drink the sweet poison of it.", to: "N24", canon: true },
+  { label: "Go on as before: daily to Charlotte, and drink the sweet poison of it.", to: "N24", canon: true, mark: "aDAILY3" },
   { label: "Try Wilhelm's remedy: a fortnight of riding and cold water.", to: "N24", mem: "REMEDY" }
 ]},
 
 "N24": { date: "24–30 November 1772", ord: 17721124, canon: true, parts: [
-  { head: "NOVEMBER 24–30.", mem: "REMEDY", text: `The fortnight of riding ended at her piano.` },
-  { head: "NOVEMBER 24–30.", notMem: "REMEDY", text: `` },
-  { text: `He found Charlotte alone at the piano and made a vow over her lips — "never will I seek to profane your purity with a kiss" — and did not trust the vow a week.
+  { head: "NOVEMBER 24–30.", text: `` },
+  { mark: "aDAILY3", text: `He went on as before — daily to the lodge, drinking it.` },
+  { mem: "REMEDY", text: `The fortnight of riding ended at Charlotte's piano.` },
+  { text: `Werther found Charlotte alone at the piano and made a vow over her lips — "never will I seek to profane your purity with a kiss" — and did not trust the vow a week.
 
 By the river, in the last of November, he met a man in a mean green coat hunting flowers among the rocks — flowers in November, for his queen. The mother's account: a year raving, chained in the madhouse; six months quiet; once her good still son, with a fine clerk's hand. And the time the poor soul praised as his happiest was the madhouse time, when he knew nothing of himself. "God in heaven! is this the destiny of man — happy only before he has his reason, and after he has lost it?"` },
   { mem: "OLDROOM", text: `He thought, listening, of a room he had asked to see in the spring, and of a schoolroom become a shop.` }
 ], choices: [
-  { label: "Press money into the mother's hand, and hasten away.", to: "N25", canon: true },
+  { label: "Press money into the mother's hand, and hasten away.", to: "N25", canon: true, mark: "aMONEY" },
   { label: "Walk with the flower-hunter among the rocks; help him look, in November.",
     to: "HM1", log: "30 November 1772 — you spent an afternoon helping a madman look for flowers." },
   { label: "Question the mother to the bottom: whence, and when, and why.", to: "N25", mem: "STORY" }
@@ -542,22 +608,28 @@ By the river, in the last of November, he met a man in a mean green coat hunting
 "HM1": { date: "30 November 1772 — with Heinrich", ord: 17721130, canon: false, parts: [
   { head: "NOVEMBER 30, LATER.", text: `They hunted flowers together the length of the grey afternoon, among wet rocks — Heinrich, the mother called him — the madman well content with his companion and promising the centaury a place in the nosegay for his queen; Werther carrying, he confessed, the easier heart of the two. At the cottage door the mother told the history over again with her son's hand in hers, and would not weep before him, and wept.` }
 ], choices: [
-  { label: "Lead Heinrich home, and say nothing of him at Charlotte's lodge.", to: "N25" },
+  { label: "Lead Heinrich home, and say nothing of him at Charlotte's lodge.", to: "N25", mark: "aLEDH" },
   { label: "Bring Heinrich one day to Charlotte's gate — let him see the queen of somebody's flowers once.", to: "N25", mem: "QUEEN" }
 ]},
 
 "N25": { date: "1–6 December 1772", ord: 17721204, canon: true, parts: [
-  { head: "DECEMBER 1–6.", text: `Then Albert, calmly, supplied the history. The flower-hunter Heinrich had once been secretary to Charlotte's father; a passion for Charlotte, nourished, concealed, discovered, had cost him first his place and then his wits. The word went into Werther like winter water.` },
+  { head: "DECEMBER 1–6.", text: `` },
+  { mark: "aMONEY", text: `Werther pressed money into the mother's hand, and got away almost at a run.` },
+  { mark: "aLEDH", text: `Werther led Heinrich home to his mother's door, and said nothing of him at the lodge.` },
+  { text: `Then Albert, calmly, supplied the history. The flower-hunter Heinrich had once been secretary to Charlotte's father; a passion for Charlotte, nourished, concealed, discovered, had cost him first his place and then his wits. The word went into Werther like winter water.` },
   { mem: "STORY", text: `Half of it he had already had from the mother; knowing had not armoured him.` },
   { mem: "QUEEN", text: `And he had led the man to her very gate. Charlotte had been gentle with him; and the gentleness was dreadful.` },
   { text: `Days later, at the piano, Charlotte fell into the old air, the heavenly air, the first of all their music. "For Heaven's sake," he broke out, "play that air no more!" She stopped, and looked at him steadily. "Werther, you are very ill: your dearest food is distasteful to you. Go, I entreat you — compose yourself." — "God! thou seest my torments, and wilt end them."` }
 ], choices: [
-  { label: "Go home, as Charlotte bids.", to: "N26", canon: true },
-  { label: "Stay the evening out; make yourself smile; fool nobody.", to: "N26", mem: "MASK" }
+  { label: "Go home, as Charlotte bids.", to: "N26", canon: true, mark: "aGOHOME" },
+  { label: "Stay the evening out; make yourself smile; fool nobody.", to: "N26", mem: "MASK", mark: "aMASKA" }
 ]},
 
 "N26": { date: "8 December 1772 — the murder", ord: 17721208, canon: true, parts: [
-  { head: "DECEMBER 8.", text: `On the sixth of December the widow's new servant — the man hired into the dismissed lad's place, the man she was to marry — was found dead at his own door. The lad was taken on the —— road, frost in his beard, no denial in his mouth; led past Werther, he said with perfect composure: "No one will now marry her, and she will marry no one."
+  { head: "DECEMBER 8.", text: `` },
+  { mark: "aGOHOME", text: `He went home as Charlotte bade him, and slept as men sleep before weather.` },
+  { mark: "aMASKA", text: `He stayed the evening out, and smiled till the muscle ached, and fooled nobody.` },
+  { text: `On the sixth of December the widow's new servant — the man hired into the dismissed lad's place, the man she was to marry — was found dead at his own door. The lad was taken on the —— road, frost in his beard, no denial in his mouth; led past Werther, he said with perfect composure: "No one will now marry her, and she will marry no one."
 
 Werther went hot to the district judge — Charlotte's father, in whose court the matter lay — and pleaded as he had never pleaded: that the crime had grown in the same ground as the man's long fidelity, and by the same husbandry.` },
   { mem: "FEVER", text: `The argument he had once written out fair for Wilhelm — that the self-destroyed and the fever-dead die of the same helplessness — came back to him before the bench, word for word; and it moved no one.` },
@@ -566,7 +638,7 @@ Werther went hot to the district judge — Charlotte's father, in whose court th
   { mem: "SOLDIER", text: `The enlisting-money he had pressed on the lad was found in the lad's pocket, unspent.` },
   { text: `The precedent, the public security, the ordinary channel: Albert sided with the law, and the law with itself. On a scrap among Werther's papers: "You cannot be saved, unfortunate man! I see clearly that we cannot be saved."` }
 ], choices: [
-  { label: "Fold the scrap in with your papers; everything must follow in the usual course.", to: "N27", canon: true },
+  { label: "Fold the scrap in with your papers; everything must follow in the usual course.", to: "N27", canon: true, mark: "aSCRAPF" },
   { label: "Not yet. Somewhere in the world a door has not been shut against you. Ride to-night, and beg the life at it.",
     gate: { flag: "PATRON", pass: "R1", fail: "N28", failMark: "doorshut",
       passLog: "8 December 1772 — you rode through the frost to beg a life.",
@@ -577,6 +649,7 @@ Werther went hot to the district judge — Charlotte's father, in whose court th
 "N27": { date: "12 December 1772 — the flood", ord: 17721212, canon: true, voice: "letter", parts: [
   { head: "DECEMBER 12.", text: `` },
   { mark: "cell", text: `I have seen his face through the grate, Wilhelm. The flood, this night, spoke with his voice.` },
+  { mark: "aSCRAPF", text: `The scrap is folded in with my papers, Wilhelm. Everything follows in the usual course.` },
   { text: `Dear Wilhelm, I am reduced to the condition of those wretches who believe they are pursued by an evil spirit. Last evening the thaw-wind came; toward eleven I heard that the river had risen, and all the vale of Wahlheim was under water. Upon the stroke of twelve I hastened forth, and beheld a fearful sight: the torrents rolling from the mountains in the moonlight; fields and meadows and hedges confounded; the whole valley one storming sea in the roar of the wind! And when the moon came out again and lay upon the black cloud, and the flood rolled and rang before me in that terrible glorious light — a shudder ran over me, and again a longing! With extended arms I stood over the abyss, and breathed: Plunge! plunge! — lost, one moment, in the bliss of hurling down there my torments and my sufferings — to storm along with the billows!` }
 ], choices: [
   { label: "My hour is not yet come: I feel it. Turn from the edge, and walk home through the drowned meadows.",
@@ -658,109 +731,122 @@ Of Albert's distress, of Charlotte's grief, suffer us to say nothing. At twelve 
 /* ========================= BRANCHES — 1771 ========================= */
 
 "A1": { date: "17 June – 6 July 1771 — the guarded summer", ord: 17710617, canon: false, parts: [
-  { head: "JUNE — JULY 1771.", text: `He kept his resolution the length of a fortnight, and his drawing prospered on it — the best sheets, he said, he ever made; a guarded heart gives a steady hand. Wilhelm, meanwhile, pressed his old scheme by every post: a secretary's place at the embassy of D—, far to the north, Werther's for a word.
+  { head: "JUNE — JULY 1771.", text: `Werther kept his resolution the length of a fortnight, and his drawing prospered on it — the best sheets, he said, he ever made; a guarded heart gives a steady hand. Wilhelm, meanwhile, pressed his old scheme by every post: a secretary's place at the embassy of D—, far to the north, Werther's for a word.
 
 Then, one July evening, Charlotte's whole household was at the fountain: her little sister Jane with the glass — "Charlotte must drink first!" — and Charlotte's plain question, why he never came out to the lodge; was he too grand for a house full of children?
 
 "What is a resolution, Wilhelm? A dam of sand. I hear the water working at it all night."` }
 ], choices: [
   { label: "Go to-morrow to Charlotte's lodge. What is a resolution against a voice?",
-    to: "N06", log: "6 July 1771 — you sought her out after all (the book resumed you)." },
+    to: "N06", mark: "aLODGE", log: "6 July 1771 — you sought her out after all (the book resumed you)." },
   { label: "Write the word to Wilhelm to-night: the embassy post at D—, for August.",
     to: "A2", log: "6 July 1771 — you asked for the embassy post before the fever could take." },
   { label: "A week's walking in the high mountains, to starve the thing; then decide.",
-    to: "N06", log: "July 1771 — you walked a week in the mountains and came down by the lodge road (the book resumed you)." }
+    to: "N06", mark: "aSTARVE", log: "July 1771 — you walked a week in the mountains and came down by the lodge road (the book resumed you)." }
 ]},
 
 "A2": { date: "August–September 1771 — the early embassy", ord: 17710802, canon: false, parts: [
-  { head: "AUGUST — SEPTEMBER 1771.", text: `The minister named him to the embassy at D—, to present himself before Michaelmas. He rode to the hunting-lodge to take leave of Charlotte; she stood among the children with thread and scissors, and said what one says, and wished him what one wishes. At the door she gave him her hand. He did not kiss it.
+  { head: "AUGUST — SEPTEMBER 1771.", text: `The minister named Werther to the embassy at D—, to present himself before Michaelmas. He rode to the hunting-lodge to take leave of Charlotte; she stood among the children with thread and scissors, and said what one says, and wished him what one wishes. At the door she gave him her hand. He did not kiss it.
 
 "There is a sort of victory that goes dressed in the colours of flight, and a sort of flight in the colours of victory; the tailor who can tell the two coats apart is not yet born."
 
 By Michaelmas he was at his desk, discovering the taste of a tired evening honestly come by.` }
 ], choices: [
-  { label: "Bury yourself in the work till the work is a wall.", to: "N12", mem: "DESKWORK" },
-  { label: "Allow yourself one measured, cousinly letter to Charlotte each month.", to: "N12", mem: "COUSINLY" }
+  { label: "Bury yourself in the work till the work is a wall.", to: "N12", mem: "DESKWORK", mark: "aWALLW" },
+  { label: "Allow yourself one measured, cousinly letter to Charlotte each month.", to: "N12", mem: "COUSINLY", mark: "aCOUS" }
 ]},
 
 /* ==================== BRANCH — STAYING AT WAHLHEIM ==================== */
 
 "ST1": { date: "October 1771 — the vintage", ord: 17711008, canon: false, parts: [
-  { head: "OCTOBER 1771.", text: `He unpacked the trunk and answered the minister with civilities. Then the vintage: all Wahlheim on the hill, Albert in shirt-sleeves and nearly merry, Charlotte with the shears, the juice-stained children about her like sparrows; Werther carrying baskets till his shoulders sang — "for one whole afternoon precisely as happy as a beast of burden, which is a station in life not sufficiently praised."
+  { head: "OCTOBER 1771.", text: `Werther unpacked the trunk, and answered the minister with civilities. Then the vintage: all Wahlheim on the hill, Albert in shirt-sleeves and nearly merry, Charlotte with the shears, the juice-stained children about her like sparrows; Werther carrying baskets till his shoulders sang — "for one whole afternoon precisely as happy as a beast of burden, which is a station in life not sufficiently praised."
 
 At evening, over the new must, Albert took his hand and said he was glad — twice, he said it — that Werther had not gone for the winter. "What sickness is in me, that a man's kindness should lie on my chest like snow-water?"` }
 ], choices: [
-  { label: "Carry baskets; drink the must; be a glad beast of burden while it lasts.", to: "ST2" },
-  { label: "Watch Albert being nearly merry, and keep the ledger of it.", to: "ST2" }
+  { label: "Carry baskets; drink the must; be a glad beast of burden while it lasts.", to: "ST2", mark: "aBASK" },
+  { label: "Watch Albert being nearly merry, and keep the ledger of it.", to: "ST2", mark: "aWATCH" }
 ]},
 
 "ST2": { date: "winter 1771–72 at the lodge", ord: 17720112, canon: false, parts: [
-  { head: "NOVEMBER — JANUARY.", text: `Three evenings a week he read aloud — Charlotte at her work, Albert at his documents, half attending, like a man with one boot in the stirrup. He taught the little ones their letters.
+  { head: "NOVEMBER — JANUARY.", text: `` },
+  { mark: "aBASK", text: `He carried baskets till the vintage was in, and slept those weeks like a ploughman.` },
+  { mark: "aWATCH", text: `He watched Albert being nearly merry, and kept the ledger; and the ledger kept him.` },
+  { text: `Three evenings a week Werther read aloud — Charlotte at her work, Albert at his documents, half attending, like a man with one boot in the stirrup. He taught the little ones their letters.
 
 The change he set down plainly, as a chronicler: Charlotte had ceased to give him her hand at parting. It was done without one word, the way frost is done. And once, of a neighbour's long-staying guest, she said — not at him, past him, which was her way when it was at him — that the friend of a house is like the clock of a house: valued in its place, wound regularly, and never taken abroad. He laughed with the rest. "I am the friend of the house. I repeated it to my chamber wall until the candle stood in a winding-sheet."` }
 ], choices: [
-  { label: "Laugh with the rest; repeat it to the chamber wall.", to: "ST3" },
+  { label: "Laugh with the rest; repeat it to the chamber wall.", to: "ST3", mark: "aWALL2" },
   { label: "Stay away a full fortnight, and see whether the house sends for you.", to: "ST3", mem: "FORTNIGHT" }
 ]},
 
 "ST3": { date: "20 February 1772 — the wedding", ord: 17720220, canon: false, parts: [
-  { head: "FEBRUARY 20, 1772.", mem: "FORTNIGHT", text: `The house had not sent for him. He came back on his own feet, in time for the banns.` },
-  { text: `He stood among the guests at Charlotte and Albert's wedding, in his blue coat, and saw it done. She wore white; the ring went on; her father wept with a free old man's face; the children strewed winter-green, there being nothing else to strew. Albert's joy was grave and quiet and past all argument, like a title-deed. Once, in turning, her eyes crossed Werther's; and there was in them something that asked — not forgiveness; say rather, something that took leave.
+  { head: "FEBRUARY 20, 1772.", text: `` },
+  { mark: "aWALL2", text: `He had laughed with the rest, and said it nightly to the chamber wall; and the banns were read.` },
+  { mem: "FORTNIGHT", text: `The house had not sent for him. He came back on his own feet, in time for the banns.` },
+  { text: `Werther stood among the guests at Charlotte and Albert's wedding, in his blue coat, and saw it done. She wore white; the ring went on; her father wept with a free old man's face; the children strewed winter-green, there being nothing else to strew. Albert's joy was grave and quiet and past all argument, like a title-deed. Once, in turning, her eyes crossed Werther's; and there was in them something that asked — not forgiveness; say rather, something that took leave.
 
 "I stood upright the whole hour, as a man stands in cold water, by mere astonishment." Late, in the crowd at the door, she gave him her hand — before them all, where it could mean nothing — and said, "Good night, dear Werther."` }
 ], choices: [
   { label: "Leave to-night. A note for the household; the roads are frozen hard, and will carry you anywhere.",
     to: "ST4", log: "20 February 1772 — you fled from the wedding into the winter roads." },
   { label: "Remain. Where should I go? The world is everywhere the same.",
-    to: "ST5", log: "20 February 1772 — you watched her married, and stayed." },
+    to: "ST5", mark: "aREMAIN", log: "20 February 1772 — you watched her married, and stayed." },
   { label: "Drink the feast through, and toast them both a shade too loudly.",
     to: "ST5", mem: "TOAST", log: "20 February 1772 — you watched her married, and stayed." }
 ]},
 
 "ST4": { date: "spring 1772 — the roads", ord: 17720509, canon: false, parts: [
-  { head: "MARCH — JUNE 1772.", text: `Four towns, whose names he did not trouble to learn. In March, the pilgrimage to his native place: the great elm; the schoolroom become a shop; the stream where a boy had stood surmising the countries the water must pass through. "Man needs but little earth for enjoyment, and still less for his final repose."
+  { head: "MARCH — JUNE 1772.", text: `Werther rode out the wedding night, a note left on the table. Then four towns, whose names he did not trouble to learn. In March, the pilgrimage to his native place: the great elm; the schoolroom become a shop; the stream where a boy had stood surmising the countries the water must pass through. "Man needs but little earth for enjoyment, and still less for his final repose."
 
 From an inn on the —— road: "All my roads have one fault in common: each of them, given time enough, can be made to bend toward a certain valley. I ride away from it by long detours. That is my whole geography now — away from; and the flaw in the method you will have found out long before I confess it."` }
 ], choices: [
-  { label: "Ride farther from the valley, by longer detours.", to: "N19" },
-  { label: "Admit the method: all the detours bend home.", to: "N19" },
+  { label: "Ride farther from the valley, by longer detours.", to: "N19", mark: "aFAR" },
+  { label: "Admit the method: all the detours bend home.", to: "N19", mark: "aADMIT" },
   { label: "The players at the inn want a man who can read verse aloud and paint a forest by Friday. Ride with them a stage or two.",
     to: "T1", log: "May 1772 — you rode off with a troupe of players, and the book lost sight of you." }
 ]},
 
 "ST5": { date: "spring–summer 1772 — the permitted days", ord: 17720710, canon: false, parts: [
-  { head: "MARCH — JULY 1772.", mem: "TOAST", text: `The toast at the feast was remembered against him kindly, which was worse.` },
-  { text: `He went out to Charlotte's lodge every second day, no oftener — "a calendar of permitted days," kept strict as a merchant's ledger. In June came what he had long heard coming, as one hears a wagon on a far road. Albert had asked her to say it, which was his cleanness and his cruelty in one; she said it walking in the garden, her eyes on her work: "The world talks, Werther. Come to us — come always — but come more seldom."
+  { head: "MARCH — JULY 1772.", text: `` },
+  { mark: "aREMAIN", text: `He remained. Where should he have gone? The world is everywhere the same.` },
+  { mem: "TOAST", text: `The toast at the feast was remembered against him kindly, which was worse.` },
+  { text: `Werther went out to Charlotte's lodge every second day, no oftener — "a calendar of permitted days," kept strict as a merchant's ledger. In June came what he had long heard coming, as one hears a wagon on a far road. Albert had asked her to say it, which was his cleanness and his cruelty in one; she said it walking in the garden, her eyes on her work: "The world talks, Werther. Come to us — come always — but come more seldom."
 
 "More seldom! There is a whole liturgy in it. I answered like a man of sense; I have that grimace by heart now."` }
 ], choices: [
-  { label: "Keep the calendar of permitted days strictly.", to: "N20" },
+  { label: "Keep the calendar of permitted days strictly.", to: "N20", mark: "aSTRICT" },
   { label: "Break the calendar once — a Tuesday, unannounced — and see Charlotte's face when the door opens.", to: "N20", mem: "TUESDAY" }
 ]},
 
 /* ==================== BRANCH — FRÄULEIN B— ==================== */
 
 "L1": { date: "April 1772 — the frost", ord: 17720414, canon: false, parts: [
-  { head: "APRIL 1772.", text: `The town talked of nothing else for a month. Fräulein B—'s aunt shut her door — the pedigree in her hall goes back, they say, to a crusader, and every man of it turned in his grave at once, which in so numerous a family makes a considerable noise. The Count of C—, on the evening it broke, crossed the whole assembly-room and gave Werther his arm before them all, talking of Homer.
+  { head: "APRIL 1772.", text: `Werther asked for Fräulein B—'s hand that same evening, the dust of the assembly still on his boots. She did not say no; the aunt said everything else. The town talked of nothing else for a month: the aunt's door shut against him — the pedigree in her hall goes back, they say, to a crusader, and every man of it turned in his grave at once, which in so numerous a family makes a considerable noise. The Count of C—, on the evening it broke, crossed the whole assembly-room and gave Werther his arm before them all, talking of Homer.
 
 And Fräulein B— did not bow her head into the wind; she straightened it. "You have chosen a bad season for your wooing," she said at her window: "the whole town is one frost. Come again when it thaws." And she smiled as she said thaws.` }
 ], choices: [
-  { label: "Wait out the frost like a scholar; woo the aunt meanwhile with talk of pedigrees.", to: "L2", mem: "AUNTWOO" },
-  { label: "A letter a day until it thaws.", to: "L2", mem: "DAILY" }
+  { label: "Wait out the frost like a scholar; woo the aunt meanwhile with talk of pedigrees.", to: "L2", mem: "AUNTWOO", mark: "aAUNTW" },
+  { label: "A letter a day until it thaws.", to: "L2", mem: "DAILY", mark: "aDAILYL" }
 ]},
 
 "L2": { date: "May 1772 — the thaw", ord: 17720520, canon: false, parts: [
-  { head: "MAY 20.", text: `"Wilhelm! — I set the word at the head of the letter as one plants a flag on a tower that is taken: she has said yes."
+  { head: "MAY 20.", text: `` },
+  { mark: "aAUNTW", text: `April was spent gravely wooing the aunt with pedigrees.` },
+  { mark: "aDAILYL", text: `A letter a day had gone to Fräulein B—'s window through the frost.` },
+  { text: `"Wilhelm! — I set the word at the head of the letter as one plants a flag on a tower that is taken: she has said yes."
 
 Not to rank, not to the twelve quarterings — to a discharged legation-secretary with a portfolio of drawings and a heart in questionable repair. She said it in the garden, by the espaliered pears, her hands behind her like a girl saying a lesson; and when he could not speak, she laughed, and said the frost had got his tongue, and that it must be quite the last of it. The aunt struck her colours upon terms; the Count promised his carriage and his cook.` }
 ], choices: [
-  { label: "Tell Wilhelm everything to-night.", to: "E2" },
-  { label: "Tell no one for three days; carry it under your coat like a warm loaf.", to: "E2" }
+  { label: "Tell Wilhelm everything to-night.", to: "E2", mark: "aTOLD" },
+  { label: "Tell no one for three days; carry it under your coat like a warm loaf.", to: "E2", mark: "aLOAF" }
 ]},
 
 "E2": { date: "16 June 1772", ord: 17720616, canon: false,
   ending: "THE ANSWER", endingId: "E2", voice: "letter", parts: [
-  { head: "JUNE 16, 1772.", text: `To-day, Wilhelm — and you will have remarked the date before my pen could underline it — one year gone since I first crossed a certain threshold and saw a girl in white cutting bread for a swarm of children, and thought heaven had emptied itself into a hunting-lodge — to-day I am married.
+  { head: "JUNE 16, 1772.", text: `` },
+  { mark: "aTOLD", text: `You have known it, Wilhelm, since the night I wrote you everything; know it now with dates.` },
+  { mark: "aLOAF", text: `I carried it three days under my coat like a warm loaf before even you had it; forgive me.` },
+  { text: `To-day, Wilhelm — and you will have remarked the date before my pen could underline it — one year gone since I first crossed a certain threshold and saw a girl in white cutting bread for a swarm of children, and thought heaven had emptied itself into a hunting-lodge — to-day I am married.
 
 Heaven is not emptied, Wilhelm. That was my error, and I publish the retraction: heaven repeats itself. It is the most spendthrift of authors; it writes the same divine sentence into more books than the learned will ever count. Deep blue eyes, this time, and the north in her voice; and when she laughs, the crusader turns in his grave, and I forgive him — for I too know now what it is to be unable to lie still.
 
@@ -775,18 +861,21 @@ I caught myself, at evening under her aunt's lindens, speaking of my happiness i
 /* ==================== BRANCH — THE OFFICE ==================== */
 
 "O1": { date: "April–May 1772 — the apology", ord: 17720401, canon: false, parts: [
-  { head: "SPRING 1772.", text: `He made his apology — that too: waited upon Madame S—, the noblewoman whose party had whispered him from the Count's room, and inquired after her health; and she was gracious, having gained everything, he being no longer anything. "Nothing in the world costs so little as what has cost everything."
+  { head: "SPRING 1772.", text: `Werther made his apology — that too: waited upon Madame S—, the noblewoman whose party had whispered him from the Count's room, and inquired after her health; and she was gracious, having gained everything, he being no longer anything. "Nothing in the world costs so little as what has cost everything."
 
 He learned the particles. "I take up my papers, and where I had written a sentence with blood in it, I amend it into one with none; and he reads, and nods, and says: it will do. It does."` },
   { flag: "BELLA", text: `Fräulein B— passed him on the promenade and bowed as one bows to a man one has heard is lately dead — a little afraid of the error either way.` },
   { text: `The Count remained civil; but careful now, as a man is careful of a repaired glass.` }
 ], choices: [
-  { label: "Learn the ambassador's grammar to perfection.", to: "O2" },
-  { label: "Keep one locked drawer of Wahlheim drawings against the winter.", to: "O2", mem: "LOCKED" }
+  { label: "Learn the ambassador's grammar to perfection.", to: "O2", mark: "aGRAM" },
+  { label: "Keep one locked drawer of Wahlheim drawings against the winter.", to: "O2", mem: "LOCKED", mark: "aLOCKA" }
 ]},
 
 "O2": { date: "September 1772 — advancement", ord: 17720903, canon: false, parts: [
-  { head: "SEPTEMBER 3.", text: `The ambassador went to his estates and his gout, and Werther conducted the legation in his absence. The minister wrote that his despatches were models. "They are: I take a young man's living sentence, and I improve it dead, and it will do. Yesterday I returned the new secretary's memorandum with the remark that one may always improve by a more appropriate particle — and heard my own voice go out of me, and it was his voice."
+  { head: "SEPTEMBER 3.", text: `` },
+  { mark: "aGRAM", text: `The grammar was learned to perfection.` },
+  { mark: "aLOCKA", text: `One drawer stayed locked, its key unworn.` },
+  { text: `The ambassador went to his estates and his gout, and Werther conducted the legation in his absence. The minister wrote that his despatches were models. "They are: I take a young man's living sentence, and I improve it dead, and it will do. Yesterday I returned the new secretary's memorandum with the remark that one may always improve by a more appropriate particle — and heard my own voice go out of me, and it was his voice."
 
 On the desk, come to light from under the winter lists: a sheet of Wahlheim drawings — geese, a plough, two lindens. "There is a smell in old paper, Wilhelm. Toward evening the fact was strongest."` }
 ], choices: [
@@ -796,18 +885,18 @@ On the desk, come to light from under the winter lists: a sheet of Wahlheim draw
 ]},
 
 "O2B": { date: "mid-September 1772 — the road west", ord: 17720910, canon: false, parts: [
-  { head: "SEPTEMBER 1772.", text: `Three days of roads; then the valley opened at evening like a book left face-down all this while. He took his old room at the inn under the lindens, and did not go up to the lodge that night. "To-morrow," he writes — one word, twice underlined.` }
+  { head: "SEPTEMBER 1772.", text: `Three days of roads; then the valley opened at evening like a book left face-down all this while. Werther took his old room at the inn under the lindens, and did not go up to the lodge that night. "To-morrow," he writes — one word, twice underlined.` }
 ], choices: [
-  { label: "Up to the lodge at first light.", to: "N22" },
-  { label: "The fountain path first; come at Charlotte by the old stations of the first summer.", to: "N22" }
+  { label: "Up to the lodge at first light.", to: "N22", mark: "aFIRSTL" },
+  { label: "The fountain path first; come at Charlotte by the old stations of the first summer.", to: "N22", mark: "aSTATIONS" }
 ]},
 
 "O3": { date: "November 1772 — fair copy", ord: 17721130, canon: false, parts: [
-  { head: "NOVEMBER 30.", text: `The winter lists were prepared; he was confirmed in the conduct of the legation until Easter, with an intimation of more. The Count's assembly received him on a Thursday — the same room. "I looked at the floor by the window, where a man once stood whom the company whispered out of it; and I felt nothing that a gentleman may not feel in company."` },
+  { head: "NOVEMBER 30.", text: `The winter lists were prepared; Werther was confirmed in the conduct of the legation until Easter, with an intimation of more. The Count's assembly received him on a Thursday — the same room. "I looked at the floor by the window, where a man once stood whom the company whispered out of it; and I felt nothing that a gentleman may not feel in company."` },
   { flag: "BELLA", text: `Fräulein B— is betrothed: the Baron F—'s nephew; the pedigree is satisfied. "I signed the register of congratulations in a fair hand. My hand is much remarked upon now."` },
   { text: `"It occurs to me that I have not opened the portfolio since Michaelmas, and that I do not miss it. I set the fact down — a chronicler sets down facts — though I can no longer always tell which of them are wounds."` }
 ], choices: [
-  { label: "Dine with the chancellor on Sundays.", to: "E3" },
+  { label: "Dine with the chancellor on Sundays.", to: "E3", mark: "aCHANC" },
   { label: "Open the portfolio once — and close it.", to: "E3", mem: "OPENED" }
 ]},
 
@@ -816,6 +905,7 @@ On the desk, come to light from under the winter lists: a sheet of Wahlheim draw
   { head: "D—, DECEMBER 23, 1772. TO THE MINISTER.", text: `Excellency! In obedience to the rescript of the 15th instant, the undersigned has the honour to report: that the winter lists are closed; that the accounts of the legation have been examined and found exact; and that the correspondence of the quarter is answered, registered, and filed. Nothing further has occurred that requires to be brought to your Excellency's notice.
 
 The undersigned permits himself, with the season, the expression of his most dutiful respect, and remains, with perfect exactitude, your Excellency's most obedient servant.` },
+  { mark: "aCHANC", text: `The undersigned has further the honour to report that he dined, on Sunday last, with the chancellor.` },
   { mem: "OPENED", text: `— postscriptum, in another ink: It snowed to-day past the window the whole forenoon; and the snow put me in mind of something I had looked at once in October, and could not afterward recover.` },
   { mem: "LOCKED", notMem: "OPENED", text: `— postscriptum, in another ink: It snowed to-day past the window the whole forenoon. The locked drawer I did not open.` },
   { notMem: "LOCKED", text: `— postscriptum, in another ink: It snowed to-day past the window the whole forenoon; and the snow put me in mind of something which I could not afterward recover.` },
@@ -829,8 +919,8 @@ The undersigned permits himself, with the season, the expression of his most dut
 
 He drew the wheel-house and the great pump, and the Master of the mines swore no draughtsman had done them truer. And on the third evening, on the grass with the green after-image of sunset swimming on the dark, he caught himself measuring — "on the packthread of the heart, which never lies and never learns" — the distance from the gallery's end to a certain valley. The thread ran straight through the mountain.` }
 ], choices: [
-  { label: "Up, and homeward by the straight road.", to: "N21", canon: true },
-  { label: "Send Wilhelm the wheel-house drawing first: proof the hand still serves.", to: "N21" },
+  { label: "Up, and homeward by the straight road.", to: "N21", canon: true, mark: "aUPHOME" },
+  { label: "Send Wilhelm the wheel-house drawing first: proof the hand still serves.", to: "N21", mark: "aWHEELA" },
   { label: "The Master of the mines offers winter work: the new galleries want taking up on paper.",
     to: "G1", log: "September 1772 — you signed for the winter below, and the book lost the light of you." }
 ]},
@@ -838,19 +928,21 @@ He drew the wheel-house and the great pump, and the Master of the mines swore no
 /* ==================== BRANCH — THE RIDE ==================== */
 
 "R1": { date: "8–11 December 1772 — the ride", ord: 17721211, canon: false, parts: [
-  { head: "DECEMBER 11.", text: `Two nights on the roads, the frost like a wolf at the horse's chest. He rode to the one door in this world that had never been shut against him; stood in the hall in his road-dirt like the messenger in a tragedy; and was heard — heard to the end — in a little cabinet away from the guests. He pleaded the wretch's whole case: that the crime had grown in the same ground as the fidelity, and by the same husbandry.
+  { head: "DECEMBER 11.", text: `Two nights on the roads, the frost like a wolf at the horse's chest. Werther had ridden to the one door in this world that had never been shut against him; stood in the hall in his road-dirt like the messenger in a tragedy; and was heard — heard to the end — in a little cabinet away from the guests. He pleaded the wretch's whole case: that the crime had grown in the same ground as the fidelity, and by the same husbandry.
 
 The great man sat a while with his ring against his teeth. Then: "The wheel is not for this poor devil. I will write to-night; and you shall carry a second letter yourself in the morning, for speed's sake."
 
 "Despair, Wilhelm — I am learned in it — despair is not the truth. It is only the dark, told over as though it were the whole of the astronomy."` }
 ], choices: [
   { label: "Carry the second letter yourself at dawn, for speed's sake.", to: "E4" },
-  { label: "Sleep three hours first; a dead messenger delivers nothing.", to: "E4" }
+  { label: "Sleep three hours first; a dead messenger delivers nothing.", to: "E4", mark: "aSLEPT" }
 ]},
 
 "E4": { date: "24 December 1772", ord: 17721224, canon: false,
   ending: "THE PARDON", endingId: "E4", voice: "letter", parts: [
-  { head: "DECEMBER 24, 1772.", text: `It is done, Wilhelm. I carried the letter myself to the president of the court, and stood by while the seals were verified; and at noon to-day I was suffered to see the prisoner, to tell him. He heard it standing, his cap in his two hands, and said nothing a long while; and then — not to me; to the window — "So no one will marry her after all." God forgive me that my eyes ran over at that; for I understood him to the bottom, as one bell understands another. "You are saved, unfortunate man," I said to him at the grating — and could not say the rest of it. Whether we are saved, I know not.
+  { head: "DECEMBER 24, 1772.", text: `` },
+  { mark: "aSLEPT", text: `I slept three hours at the inn — the first sleep since the arrest — and lost nothing by it.` },
+  { text: `It is done, Wilhelm. I carried the letter myself to the president of the court, and stood by while the seals were verified; and at noon to-day I was suffered to see the prisoner, to tell him. He heard it standing, his cap in his two hands, and said nothing a long while; and then — not to me; to the window — "So no one will marry her after all." God forgive me that my eyes ran over at that; for I understood him to the bottom, as one bell understands another. "You are saved, unfortunate man," I said to him at the grating — and could not say the rest of it. Whether we are saved, I know not.
 
 It is Christmas Eve. I passed the hunting-lodge at dusk, going out of the valley: candles in every window, the shadows of the children going across the blinds like a play of hands; and one taper, set apart upon a sill, may have been for anyone. The road does not stop the horse for such questions. I did not stop the horse.
 
@@ -870,13 +962,16 @@ She gave me my gift before them all, as to a brother of the house: a book-mark o
 
 I behaved well. It can be done. It is done every day, by thousands.` }
 ], choices: [
-  { label: "Give the children the whole of Christmas Day besides. You are expected.", to: "E5" },
-  { label: "Walk home the long way, past the drowned meadows, and feel nothing pull.", to: "E5" }
+  { label: "Give the children the whole of Christmas Day besides. You are expected.", to: "E5", mark: "aXMAS" },
+  { label: "Walk home the long way, past the drowned meadows, and feel nothing pull.", to: "E5", mark: "aMEADOW" }
 ]},
 
 "E5": { date: "1 January 1773", ord: 17730101, canon: false,
   ending: "THE CHRISTMAS GIFT", endingId: "E5", voice: "letter", parts: [
-  { head: "JANUARY 1, 1773.", text: `This morning early the judge's man brought over a paper, folded large, sealed with half a wafer, my name upon it in a stumbling grand hand a full inch high. The elder boys have written their New-Year's wishes, as their mother taught them while she lived: one for papa; one for Albert and Charlotte; and one — one for Werther.
+  { head: "JANUARY 1, 1773.", text: `` },
+  { mark: "aXMAS", text: `Christmas Day was the children's entire, as promised: the goose, the endless grace, the new sled.` },
+  { mark: "aMEADOW", text: `I walked home that night the long way, Wilhelm, past the drowned meadows, and felt nothing pull. Set that down in gold.` },
+  { text: `This morning early the judge's man brought over a paper, folded large, sealed with half a wafer, my name upon it in a stumbling grand hand a full inch high. The elder boys have written their New-Year's wishes, as their mother taught them while she lived: one for papa; one for Albert and Charlotte; and one — one for Werther.
 
 It lies before me: goodness and long life, in a text-hand, with the W turned handsomely, and a flight of birds over the whole — Sophy's, I think, the birds — going all one way, like the last line of a song. I have hung it over my desk, where Charlotte's profile used to hang. The wall is better furnished now.
 
@@ -903,38 +998,50 @@ And thou, good soul, that feelest the same stress as he — let this little book
 /* ============== ESCAPE CORRIDOR — THE GALLERY (mines) ============== */
 
 "G1": { date: "September 1772 — the contract", ord: 17720920, canon: false, parts: [
-  { head: "SEPTEMBER 1772.", text: `The Master of the mines, having seen the wheel-house drawings, offered what no one had thought to offer him: work. A winter's contract — the new galleries to be taken up on paper; chains and compass below, pen above; lodging with the bell-founder's household; the leather and the lamp his own. He did not go up to Wahlheim.
+  { head: "SEPTEMBER 1772.", text: `The Master of the mines, having seen the wheel-house drawings, offered what no one had thought to offer Werther: work. A winter's contract — the new galleries to be taken up on paper; chains and compass below, pen above; lodging with the bell-founder's household; the leather and the lamp his own. He did not go up to Wahlheim.
 
 To Wilhelm, three lines: "I have hired out my one talent to the dark. Do not tell my mother it is the happiest sentence I have written this year."` }
 ], choices: [
-  { label: "Sign for the winter.", to: "G2" },
-  { label: "Sign for the winter — but keep a horse, in case.", to: "G2" }
+  { label: "Sign for the winter.", to: "G2", mark: "aSIGN" },
+  { label: "Sign for the winter — but keep a horse, in case.", to: "G2", mark: "aHORSE" }
 ]},
 
 "G2": { date: "November 1772", ord: 17721101, canon: false, parts: [
-  { head: "NOVEMBER 1772.", text: `From the winter we have working papers and two letters. The letters are calm — calmer than any since the spring of 1771. "There is no weather below, Wilhelm; I have told you it is an absence. I begin to think a man can furnish an absence. One measures; the chain does not exaggerate; at evening the line on the paper is exactly as long as the day was. Find me another trade of which that is true."` }
+  { head: "NOVEMBER 1772.", text: `` },
+  { mark: "aSIGN", text: `He signed, and the winter began.` },
+  { mark: "aHORSE", text: `He signed — and kept a horse at the bell-founder's, which ate its head off, unridden.` },
+  { text: `From the winter we have working papers and two letters. The letters are calm — calmer than any since the spring of 1771. "There is no weather below, Wilhelm; I have told you it is an absence. I begin to think a man can furnish an absence. One measures; the chain does not exaggerate; at evening the line on the paper is exactly as long as the day was. Find me another trade of which that is true."` }
 ], choices: [
-  { label: "Measure; draw; sleep.", to: "G3" },
-  { label: "Keep the little Homer in the tool-chest, under the chalks.", to: "G3", mem: "TOOLCHEST" }
+  { label: "Measure; draw; sleep.", to: "G3", mark: "aMEAS" },
+  { label: "Keep the little Homer in the tool-chest, under the chalks.", to: "G3", mem: "TOOLCHEST", mark: "aCHESTA" }
 ]},
 
 "G3": { date: "24 December 1772", ord: 17721224, canon: false, parts: [
-  { head: "DECEMBER 24, 1772.", text: `Of that Christmas one line is preserved: "They sang below at midnight, the whole shift, and set candles in the gallery wall; and I thought of no one, Wilhelm — which, thou wilt understand, is a manner of thinking of one person only."` }
+  { head: "DECEMBER 24, 1772.", text: `` },
+  { mark: "aMEAS", text: `He measured, drew, slept.` },
+  { mark: "aCHESTA", text: `The little Homer lay under the chalks now, and went down with him daily.` },
+  { text: `Of that Christmas one line is preserved: "They sang below at midnight, the whole shift, and set candles in the gallery wall; and I thought of no one, Wilhelm — which, thou wilt understand, is a manner of thinking of one person only."` }
 ], choices: [
-  { label: "Set your own candle in the wall.", to: "G4" },
-  { label: "Go up, and stand an hour under the stars.", to: "G4" }
+  { label: "Set your own candle in the wall.", to: "G4", mark: "aCAND" },
+  { label: "Go up, and stand an hour under the stars.", to: "G4", mark: "aSTARS" }
 ]},
 
 "G4": { date: "March 1773 — the water", ord: 17730315, canon: false, parts: [
-  { head: "MARCH 1773.", text: `Here the letters fail, and we are on the pay-book's ground. In March the spring water broke into the second gallery. The book shows double wages that quarter; an entry for seven men's lamps, re-issued; and a silver tankard, inscribed to "the surveyor W., by whose plan of the old workings seven came up alive." Of his own account of that week we have nothing.` },
+  { head: "MARCH 1773.", text: `` },
+  { mark: "aCAND", text: `His candle stood in the gallery wall with the others.` },
+  { mark: "aSTARS", text: `He had stood his hour under the stars, and gone down again before the bells.` },
+  { text: `Here the letters fail, and we are on the pay-book's ground. In March the spring water broke into the second gallery. The book shows double wages that quarter; an entry for seven men's lamps, re-issued; and a silver tankard, inscribed to "the surveyor W., by whose plan of the old workings seven came up alive." Of his own account of that week we have nothing.` },
   { head: "· · ·", text: `` }
 ], choices: [
-  { label: "Say nothing of it to Wilhelm.", to: "G5" },
-  { label: "Send Wilhelm the newspaper paragraph, without comment.", to: "G5" }
+  { label: "Say nothing of it to Wilhelm.", to: "G5", mark: "aQUIETG" },
+  { label: "Send Wilhelm the newspaper paragraph, without comment.", to: "G5", mark: "aPAPER" }
 ]},
 
 "G5": { date: "1774", ord: 17740601, canon: false, parts: [
-  { head: "1774.", text: `Of the year 1774 the archive holds a bill for Dutch paper, and one line in the Master's hand: "W. below, at the great plan."` }
+  { head: "1774.", text: `` },
+  { mark: "aQUIETG", text: `Of the water-week Wilhelm got nothing.` },
+  { mark: "aPAPER", text: `Wilhelm got the newspaper paragraph, without one word of Werther's own beneath it.` },
+  { text: `Of the year 1774 the archive holds a bill for Dutch paper, and one line in the Master's hand: "W. below, at the great plan."` }
 ], choices: [
   { label: "Below, at the great plan.", to: "E7" },
   { label: "Below.", to: "E7" }
@@ -955,26 +1062,35 @@ To Wilhelm, three lines: "I have hired out my one talent to the dark. Do not tel
 
 Werther read it twice — "once with terror, and once, Wilhelm, with something I have not felt since Wahlheim: appetite."` }
 ], choices: [
-  { label: "Pack the portfolio; buy furs at Leipzig.", to: "P2" },
-  { label: "Write one last letter to Charlotte before the frontier.", to: "P2", mem: "LASTLETTER" }
+  { label: "Pack the portfolio; buy furs at Leipzig.", to: "P2", mark: "aFURS" },
+  { label: "Write one last letter to Charlotte before the frontier.", to: "P2", mem: "LASTLETTER", mark: "aLASTLA" }
 ]},
 
 "P2": { date: "September 1772 — Riga", ord: 17720915, canon: false, parts: [
-  { head: "SEPTEMBER 1772. RIGA.", text: `From the road east we have a page on the birch forests, and this: "To-day, past noon, the sea. I had it from books, like everything; and like everything it is not what the books said. It does not rage, Wilhelm — it works; it is the diligentest grey workman I ever saw. I sat on a bollard three hours and drew nothing. Some things are for the eye alone, which is a lesson twenty-two years overdue."` }
+  { head: "SEPTEMBER 1772. RIGA.", text: `` },
+  { mark: "aFURS", text: `The furs were bought at Leipzig, and laughed at until Riga.` },
+  { mark: "aLASTLA", text: `The letter to Charlotte was written before the frontier — and went, sealed, to the bottom of the trunk instead of the post.` },
+  { text: `From the road east we have a page on the birch forests, and this: "To-day, past noon, the sea. I had it from books, like everything; and like everything it is not what the books said. It does not rage, Wilhelm — it works; it is the diligentest grey workman I ever saw. I sat on a bollard three hours and drew nothing. Some things are for the eye alone, which is a lesson twenty-two years overdue."` }
 ], choices: [
-  { label: "Draw nothing; look.", to: "P3" },
-  { label: "Draw it anyway, badly, and keep the sheet as a cure for vanity.", to: "P3", mem: "BADSEA" }
+  { label: "Draw nothing; look.", to: "P3", mark: "aLOOK" },
+  { label: "Draw it anyway, badly, and keep the sheet as a cure for vanity.", to: "P3", mem: "BADSEA", mark: "aBADSA" }
 ]},
 
 "P3": { date: "December 1772 — Petersburg", ord: 17721215, canon: false, parts: [
-  { head: "DECEMBER 1772. PETERSBURG.", text: `The Neva froze in November. Of the capital his letters give sledges, ice-hills, the palace like a cliff of shells; and this: no one there had heard of a certain assembly at D— — "I searched their faces for it a month, Wilhelm, and have given over." On the twenty-first of December he skated with the legation children on the river till dark, and came in "glowing, with a hunger I did not examine."` }
+  { head: "DECEMBER 1772. PETERSBURG.", text: `` },
+  { mark: "aLOOK", text: `He drew no sea; he looked his three hours, and carried it inland whole.` },
+  { mark: "aBADSA", text: `The failed sheet travelled with him, marked in his own hand: the sea — failed.` },
+  { text: `The Neva froze in November. Of the capital Werther's letters give sledges, ice-hills, the palace like a cliff of shells; and this: no one there had heard of a certain assembly at D— — "I searched their faces for it a month, Wilhelm, and have given over." On the twenty-first of December he skated with the legation children on the river till dark, and came in "glowing, with a hunger I did not examine."` }
 ], choices: [
-  { label: "Skate till dark.", to: "P4" },
-  { label: "Teach the youngest to cut a W in the ice.", to: "P4" }
+  { label: "Skate till dark.", to: "P4", mark: "aSKATE" },
+  { label: "Teach the youngest to cut a W in the ice.", to: "P4", mark: "aWICE" }
 ]},
 
 "P4": { date: "1773", ord: 17730601, canon: false, parts: [
-  { head: "1773.", text: `Of the following year we possess three letters and a bill of lading: colours, Dutch paper, a box of chalks by the Lübeck boat. From June: "The nights here forget to end. I sat drawing at midnight by daylight, and thought: this is the country for those to whom evening was always the enemy."` }
+  { head: "1773.", text: `` },
+  { mark: "aSKATE", text: `He skated the Neva all that frost.` },
+  { mark: "aWICE", text: `By Christmas the youngest of the legation children could cut a W in the ice, and signed the river with it everywhere.` },
+  { text: `Of the following year we possess three letters and a bill of lading: colours, Dutch paper, a box of chalks by the Lübeck boat. From June: "The nights here forget to end. I sat drawing at midnight by daylight, and thought: this is the country for those to whom evening was always the enemy."` }
 ], choices: [
   { label: "Stay through the white nights.", to: "P5" },
   { label: "Stay.", to: "P5" }
@@ -1000,27 +1116,36 @@ Werther read it twice — "once with terror, and once, Wilhelm, with something I
 "T1": { date: "June 1772 — the troupe", ord: 17720601, canon: false, parts: [
   { head: "JUNE 1772.", text: `The stage or two became the summer. The troupe was eleven persons, a wardrobe-basket, and a kingdom: the principal, Herr B—, governed it like a small elector, part tragedy-king and part horse-dealer. Werther painted them a forest, a prison, and a moon — "my first moon, Wilhelm, that anyone has needed" — and mended the prompt-books, being the only member whose hand could be read by candlelight.` }
 ], choices: [
-  { label: "Paint what they need.", to: "T2" },
-  { label: "Paint the forest with two lindens in it, for private reasons.", to: "T2", mem: "LINDENS" }
+  { label: "Paint what they need.", to: "T2", mark: "aPAINT" },
+  { label: "Paint the forest with two lindens in it, for private reasons.", to: "T2", mem: "LINDENS", mark: "aLINDA" }
 ]},
 
 "T2": { date: "September 1772", ord: 17720901, canon: false, parts: [
-  { head: "SEPTEMBER 1772.", text: `By Michaelmas he prompted; by the fair he had parts — messengers, notaries, the friend of the lover. "I am become the man who brings the news, Wilhelm; the audience dreads me, and I have never been so welcome anywhere." Madame R—, who plays the queens and mends the stockings, took his measure in a week: his heart, she ruled, was questionably repaired and professionally promising.` },
+  { head: "SEPTEMBER 1772.", text: `` },
+  { mark: "aPAINT", text: `He painted what they needed, and it served.` },
+  { mark: "aLINDA", text: `Every forest he painted had two lindens in it; no one asked why. Not yet.` },
+  { text: `By Michaelmas Werther prompted; by the fair he had parts — messengers, notaries, the friend of the lover. "I am become the man who brings the news, Wilhelm; the audience dreads me, and I have never been so welcome anywhere." Madame R—, who plays the queens and mends the stockings, took his measure in a week: his heart, she ruled, was questionably repaired and professionally promising.` },
   { flag: "WALTZ", text: `In the dance-scenes he would not waltz — some private law of his own, dating from a June night. The principal set it down to religion; Madame R— set it down correctly.` }
 ], choices: [
-  { label: "Learn the friend of the lover; it is a part with a future.", to: "T3" },
-  { label: "Ask once for the lover, and be refused kindly.", to: "T3", mem: "ASKEDLOVER" }
+  { label: "Learn the friend of the lover; it is a part with a future.", to: "T3", mark: "aFRND" },
+  { label: "Ask once for the lover, and be refused kindly.", to: "T3", mem: "ASKEDLOVER", mark: "aASKLA" }
 ]},
 
 "T3": { date: "22 December 1772 — Emilia Galotti", ord: 17721222, canon: false, parts: [
-  { head: "DECEMBER 22, 1772.", text: `On the twenty-second of December, in a residence-town, the troupe gave "Emilia Galotti" — Lessing's tragedy of an innocent destroyed. Werther prompted it: from the box beneath the boards he spoke every word of every part, half a breath before the players — the whole play once through, alone, under the stage. "A strange office, Wilhelm: to say all the passions a beat before they happen, softly, so that no one falls."` }
+  { head: "DECEMBER 22, 1772.", text: `` },
+  { mark: "aFRND", text: `He learned the friend of the lover, and was applauded for it in three towns.` },
+  { mark: "aASKLA", text: `He asked once for the lover; the principal refused him kindly, and it never rose again.` },
+  { text: `On the twenty-second of December, in a residence-town, the troupe gave "Emilia Galotti" — Lessing's tragedy of an innocent destroyed. Werther prompted it: from the box beneath the boards he spoke every word of every part, half a breath before the players — the whole play once through, alone, under the stage. "A strange office, Wilhelm: to say all the passions a beat before they happen, softly, so that no one falls."` }
 ], choices: [
-  { label: "Say the passions softly, a beat before they happen.", to: "T4" },
-  { label: "Take the book home after, and read the last act twice.", to: "T4" }
+  { label: "Say the passions softly, a beat before they happen.", to: "T4", mark: "aSOFT" },
+  { label: "Take the book home after, and read the last act twice.", to: "T4", mark: "aLACT" }
 ]},
 
 "T4": { date: "1773", ord: 17730901, canon: false, parts: [
-  { head: "1773.", text: `A playbill survives from the Michaelmas fair of 1773: "The Friend of the House, a comedy" — the Friend played by one Herr Wärther, the very phrase Charlotte's household had once fixed on him. The name is misspelt; the part, we are told, was applauded.` }
+  { head: "1773.", text: `` },
+  { mark: "aSOFT", text: `He said the passions softly, a beat before they happened, all that winter.` },
+  { mark: "aLACT", text: `He took the play home that night, read the last act twice, and put it down.` },
+  { text: `A playbill survives from the Michaelmas fair of 1773: "The Friend of the House, a comedy" — the Friend played by one Herr Wärther, the very phrase Charlotte's household had once fixed on him. The name is misspelt; the part, we are told, was applauded.` }
 ], choices: [
   { label: "The Friend of the House, nightly.", to: "E9" },
   { label: "Applauded.", to: "E9" }

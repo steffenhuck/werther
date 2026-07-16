@@ -324,3 +324,20 @@ closing sentences. Fidelity reveal: 100%, "You died on Goethe's schedule."
 Single self-contained HTML file; 1771-paper look (laid paper, ink, long-s optional and
 probably resisted); goatcounter snippet in `<head>`; lowercase italic "steffen huck" footer
 link; GitHub Pages, this repo.
+
+---
+
+## Revision 3: openings and acknowledgments
+
+Every node opening re-anchored for a reader landing on it cold: Werther is named in the
+first sentence of nearly every node (and fully introduced in N01 as "a quick pencil, a
+pocket Homer, a heart in questionable repair"); the ball node explains the partner, the
+aunt, and the cousin before the aunt speaks. And every choice is now acknowledged in the
+first line or two of its target node, via the one-node mark mechanism (~60 new
+acknowledgment lines, e.g. arriving at the ball from the widow's farm: "Werther said
+nothing more of the farm, and carried the lad's picture home unbroken. And midsummer
+came."). Exceptions, by design: structural continuations where the whole node is the
+consequence, gate failures (already acknowledged), the endgame's bare option, and the
+hollow fading pairs deep in the escape corridors. The harness now verifies the wiring both
+ways: every choice mark has a matching part in its target, every mark part has a producer.
+Also fixes three latent header bugs (WAL, ST3, ST5 showed no date line on some paths).
