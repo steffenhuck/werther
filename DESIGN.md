@@ -10,6 +10,35 @@ harness that drives the actual game graph.
 
 ---
 
+## Revision (prose layer + choice density)
+
+The graph, flags, gates, marks, endings, and verdicts of the original build stand. The prose
+layer was rewritten to an inverted narrative stance:
+
+- **The Editor narrates.** Every node is brisk third-person editorial summary with Werther's
+  voice in short quoted flashes. **Letter voice now signals loss of agency**: full letters
+  return at the two sanctioned set pieces (the Klopstock storm, N05; the pistol debate, N08)
+  and flood back across the December endgame (N27 onward; N28–N30 exempt from all budgets;
+  N29–N30 carry only hollow converging choices). The Editor returns once, at N31, to bury him.
+- **Budgets:** default nodes ≤150 words of base text (enforced by the harness at 155);
+  short nodes under 40 words for pace: N10, N16, N19, CAN, N22.
+- **Choice density:** a choice at every node, no pure continues; 116 choices total. Trivial,
+  flavour, and fatal forks are presented identically.
+- **Second-tier memory ("mems").** Persistent, never-gating tints set by choices (e.g. the
+  locked drawer of August returns in the last letter; the walnut-tree scandal chills the
+  judge in December; the fever argument of 12 August fails before the bench). The five
+  gating flags stay exactly as approved; mems only select sentences.
+- **New forks:** W1 (the widow visited, June 1771), V1 (lingering at the vicarage with
+  Frederica), C1 (the canary's kiss refused), WT1 (the walnut-tree protest), HM1 (an
+  afternoon with mad Heinrich), plus converging conduct-forks (Albert warm/cool, the lad's
+  September plea, the ribbon in the drawer). Old N02/N03 folded into N01; N21 split into
+  N21/CAN/WAL — the canon spine remains exactly 31 stations.
+- **Fixes:** Albert-continuity variant on the early-embassy path (N14 addresses a stranger);
+  bridge node O2B for the O2→N22 seam; finis wording ("stations", not "letters"); dead
+  sentinel-delete removed.
+
+---
+
 ## 0. Frame
 
 - The game opens with Goethe's Preface in the editor's voice ("I have carefully collected
