@@ -60,6 +60,31 @@ forest), ASKEDLOVER. One engine touch: part-conditions may now require multiple 
 
 ---
 
+## Revision 2: the first-time reader
+
+A comprehensibility and pacing pass; graph, flags, mems, gates, endings, corridors, and
+verdicts unchanged.
+
+- **Full first-time-reader audit** (83 targeted rewrites): every character introduced at
+  first appearance and re-introduced on return (Wilhelm named as the letters' addressee in
+  N01; Albert as "Charlotte's promised husband"; the peasant-lad, Frederica, Madame S—, the
+  flower-hunter Heinrich all restated); every allusion glossed in passing or cut (Klopstock
+  identified as the poet and his ode; "particles" become the ambassador's grammar;
+  raree-show, Lavater, the king's shilling, "kanne", "Lear", "assizes", "Emilia Galotti"
+  all glossed or replaced); every callback restates what it calls back to (the fever
+  argument, the June meddling, the walnut-tree scandal, the friend-of-the-house playbill).
+- **Choice-label legibility:** all ~90 labels audited; no pronoun without a same-sentence
+  antecedent; objects of actions named (the N01 widow/Charlotte misbinding fixed per spec).
+- **June 16 lightened:** N04 cut to ~120 words (warning, bread-cutting, "Albert is a worthy
+  man," the waltz question); the N05 set piece enters at "Never did I dance more lightly,"
+  drops the waltz vow, and runs straight to the storm and the glossed Klopstock moment.
+- **Endgame de-costumed:** N29→N30 and N30→N31 each carry a single bare option, "(the
+  letter continues)" — the visible death of choice. Standing no-continue rule suspended
+  inside the canon endgame only.
+- Word budget re-enforced everywhere (≤150 outside the three set pieces; harness-checked).
+
+---
+
 ## 0. Frame
 
 - The game opens with Goethe's Preface in the editor's voice ("I have carefully collected
